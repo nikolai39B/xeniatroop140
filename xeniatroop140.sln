@@ -55,10 +55,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "login", "login", "{C2C0E340
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "login", "login", "{14F18BE8-CF24-482F-B170-BF35F09B1A4C}"
+	ProjectSection(SolutionItems) = preProject
+		html\content\login\login.html = html\content\login\login.html
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "documentation", "documentation", "{50110C54-2DB6-4673-AA50-EDC855CC322E}"
 	ProjectSection(SolutionItems) = preProject
 		documentation\page_handler_outline.txt = documentation\page_handler_outline.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{3F556F28-5011-42B2-8B07-11DF92DC8B70}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\centerFormElements.js = scripts\centerFormElements.js
 	EndProjectSection
 EndProject
 Global
@@ -70,6 +78,7 @@ Global
 		{F9DBF785-3604-4FF0-AF4A-78A9A1CFAB64} = {4DBC6ED1-47AB-498E-8477-DFE9825EE83A}
 		{158181A5-2D9C-40B3-86FA-3A50CEB6CEF0} = {4DBC6ED1-47AB-498E-8477-DFE9825EE83A}
 		{50110C54-2DB6-4673-AA50-EDC855CC322E} = {4DBC6ED1-47AB-498E-8477-DFE9825EE83A}
+		{3F556F28-5011-42B2-8B07-11DF92DC8B70} = {4DBC6ED1-47AB-498E-8477-DFE9825EE83A}
 		{4BAF8F1A-0F45-432F-800A-6593D7CC6E5E} = {F9DBF785-3604-4FF0-AF4A-78A9A1CFAB64}
 		{3933B56C-A24A-4EC0-8FDD-3FC80F26BFDF} = {F9DBF785-3604-4FF0-AF4A-78A9A1CFAB64}
 		{A4489BED-232E-477F-A12D-B877F962A88B} = {158181A5-2D9C-40B3-86FA-3A50CEB6CEF0}
@@ -79,14 +88,14 @@ Global
 		{14F18BE8-CF24-482F-B170-BF35F09B1A4C} = {3933B56C-A24A-4EC0-8FDD-3FC80F26BFDF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		UDUDRY = False
-		UDUVERBOSE = False
-		UDUFORCE = False
-		UDUDETACHED = False
-		UDUCUSTOM = False
-		UDUCUSTOMLIST = 
-		UDUCUSTOMBUILD = 
-		UDUFILESCOPE = 
 		UDUSCENARIO = DEFAULT
+		UDUFILESCOPE = 
+		UDUCUSTOMBUILD = 
+		UDUCUSTOMLIST = 
+		UDUCUSTOM = False
+		UDUDETACHED = False
+		UDUFORCE = False
+		UDUVERBOSE = False
+		UDUDRY = False
 	EndGlobalSection
 EndGlobal

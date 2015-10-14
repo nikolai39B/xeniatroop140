@@ -37,8 +37,8 @@ DESCRIPTION:
 
 4.  Define methods:
     a.  get() method:
-        1.  do necessary processing
-        2.  determine the template values for the content
-        3.  render content using jtr.getRenderedTemplate(pathToContent, contentFilename, templateValues)
+        1.  verify user account level if necessary
+        2.  do necessary processing
+        3.  determine the template values for the content
         4.  determine page_title, content_title, and optionally stylesheets for the page
-        5.  render page using self.response.write(jtr.getRenderedPage(self, templateValues))
+        5.  render page using jtr.renderContentAndPage(self, pathToContent, contentFilename, contentTemplateValues, pageTemplateValues)

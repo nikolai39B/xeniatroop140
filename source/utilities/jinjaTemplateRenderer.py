@@ -27,6 +27,32 @@ import userAccountUtilities as uau
 # Page Rendering #
 #----------------#
 """
+Renders the content and page with their respective template values, then writes the
+page using the handler. The contentTemplateValues dictionary contains the template values for the
+page's content, and the pageTemplateValues dictionary contains the additional template values for
+page_base.html. The pageTemplateValues dictionary should contain 'page_title', 'content_title', and
+optionally 'stylesheets'.
+
+handler: the current page handler
+pathToContent: the path to the content template
+contentFilename: the content template filename
+contentTemplateValues: the template values for the content
+pageTemplateValues: the template values for the page
+
+returns: None
+"""
+def renderContentAndPage(handler, pathToContent, contentFilename, contentTemplateValues, pageTemplateValues):
+    # Render the content with its template values
+    content = getRenderedTemplate(pathToContent, contentFilename, contentTemplateValues)
+
+    # Render the page with its template values
+    pageTemplateValues['content'] = content
+    page = getRenderedPage(handler, pageTemplateValues)
+
+    # Write the page
+    handler.response.write(page)
+
+"""
 Renders and returns page_base.html after inserting the template values. The templateValues
 dictionary should contain 'page_title', 'content_title', 'content', optionally
 'stylesheets', and no other values. Any additional templating to be done to 'content' should
@@ -73,7 +99,7 @@ templateValues: a dictionary of values for the template
 
 returns: string
 """        
-def getRenderedTemplate(pathToTemplate, templateFilename, templateValues = {}):
+def getRenderedTemplate(pathToTemplate, templateFilename, templateValues):
     # Get the environment
     jinjaEnv = getJinjaEnv(pathToTemplate)
 

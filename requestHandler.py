@@ -21,9 +21,12 @@ import webapp2
 rootDir = os.path.dirname(__file__)
 sys.path.insert(0, os.path.join(rootDir, 'source/database_models'))
 sys.path.insert(0, os.path.join(rootDir, 'source/pages'))
+sys.path.insert(0, os.path.join(rootDir, 'source/pages/login'))
 sys.path.insert(0, os.path.join(rootDir, 'source/utilities'))
 import home
+import login
 
 app = webapp2.WSGIApplication([ 
     ('/', home.Home),
+    ('/login', login.Login)
 ], debug=True)

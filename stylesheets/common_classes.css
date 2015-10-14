@@ -67,6 +67,10 @@ div.d_container {
     max-width: 1200px;
 }
 
+div.d_form_textbox_line {
+    margin: 0 0 4px 0;
+}
+
 div.d_page_content {
     padding: 4px 4px 0 184px/* div.d_buttons.width + div.d_buttons.padding.left + div.d_buttons.padding.right + 4 */;
 }
@@ -83,4 +87,12 @@ hr.hr_page_header_bar {
     border-color: #000040;
     border-style: solid;
     border-width: 6px;
+}
+
+/* label */
+label.lbl_form_textbox_label {
+    display: inline-block;
+    padding: 0 4px 0 0;
+    text-align: right;
+    width: 200px;
 }

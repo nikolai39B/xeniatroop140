@@ -28,21 +28,16 @@ contentFilename = 'login.html'
 
 class Login(webapp2.RequestHandler):
     def get(self):
-        # Get the rendered page content
-        content = jtr.getRenderedTemplate(pathToContent, contentFilename)
-
-        # Set the values for the page template
-        templateValues = { 
-            'page_title': 'Troop 140',
-            'content_title': 'Login',
-            'content': content,
-        }
 
         # TEMPORARY FOR DEBUGGING. REMOVE BEFORE DEPLOYMENT
         if not uau.userWithUsernameExists('ga'):
             uau.makeGenericOwnerAccount()
-        uau.setCookieForUser('ga', self)
+        #uau.setCookieForUser('ga', self)
         #uau.deleteUserCookie(self)
 
         # Render the page
-        self.response.write(jtr.getRenderedPage(templateValues))
+        pageTemplateValues = { 
+            'page_title': 'Troop 140',
+            'content_title': 'Login',
+        }
+        jtr.renderContentAndPage(self, pathToContent, contentFilename, {}, pageTemplateValues)

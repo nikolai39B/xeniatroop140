@@ -28,15 +28,10 @@ contentFilename = 'home.html'
 
 class Home(webapp2.RequestHandler):
     def get(self):
-        # Get the rendered page content
-        content = jtr.getRenderedTemplate(pathToContent, contentFilename)
-
-        # Set the values for the page template
-        templateValues = { 
-            'page_title': 'Troop 140',
-            'content_title': 'Our Troop',
-            'content': content,
-        }
 
         # Render the page
-        self.response.write(jtr.getRenderedPage(self, templateValues))
+        pageTemplateValues = { 
+            'page_title': 'Troop 140',
+            'content_title': 'Our Troop',
+        }
+        jtr.renderContentAndPage(self, pathToContent, contentFilename, {}, pageTemplateValues)
