@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+
+    <!-- Stylesheets -->
+    <link href="stylesheets/defaults.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/common_classes.css" rel="stylesheet" type="text/css">
+    {% for sheet in stylesheets %}
+        <link href="{{ sheet }}" rel="stylesheet" type="text/css">
+    {% endfor %}
+
+    <!-- Title -->
+    <title>{{ page_title }}</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <a class="a_page_header" href="/">
+        <div class="d_container">
+            <div class="header1">Troop 140 - Xenia, OH</div>
+            <hr class="hr_page_header_bar" />
+        </div>
+    </a>
+
+    <!-- Top Buttons -->
+    {{ buttons_top | safe }}
+
+    <!-- Main Page  -->
+    <div class="d_container">
+
+        <!-- Content Title -->
+        <div class="header2">{{ content_title }}</div>
+
+        <!-- Side Buttons -->
+        {{ buttons_side | safe }}
+
+        <!-- Content -->
+        <div class="d_page_content">
+            {{ content | safe }}
+        </div>
+    </div>
+</body>
+</html>
+{% endautoescape %}

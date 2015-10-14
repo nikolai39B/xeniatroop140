@@ -1,0 +1,22 @@
+<div class="d_buttons_top">
+    <div class="d_container">
+        {% if loggedIn %}
+        <!-- Buttons -->
+        <a class="a_button a_button_top" href="/">Planning</a>
+        <a class="a_button a_button_top" href="/">File Share</a>
+        <a class="a_button a_button_top" href="/">Manage Account</a>
+        {% endif %}
+        <div class="d_welcome">
+            Welcome, 
+            {% if loggedIn %}
+                {{ user }}
+                <!-- Logout Button -->
+                <a class="a_button a_button_top" href="/">Logout</a>
+            {% else %}
+                Guest            
+                <!-- Login Button -->
+                <a class="a_button a_button_top" href="/">Login</a>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+﻿/* CSS Common Classes */
+
+/* Generic */
+.header1 {
+    font-size: 2.25em;
+    font-weight: bold;
+    padding: 20px 0 15px 35px;
+    margin: 0;
+}
+
+.header2 {
+    color: #000040;
+    font-size: 1.5em;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+}
+
+/* a */
+a.a_button {
+    font-size: 1em;
+    font-weight: normal;
+    padding: 6px 15px;
+}
+
+a.a_button:hover {
+    background: #ececec;
+}
+
+a.a_button_side {
+    display: block;
+}
+
+a.a_button_top {
+    display: inline-block;
+    text-align: center;
+}
+
+a.a_page_header {
+	background: #ececec;
+    border-bottom: solid;
+    border-bottom-color: #d0d0d0;
+    border-bottom-width: 1px;
+    display: block;
+    padding: 0 0 9px 0;
+}
+
+/* div */
+div.d_buttons_side {
+    display: inline-block;
+    float: left;
+    padding: 0 4px;
+    width: 172px/* div.d_content.margin - padding.left - padding.right - 4 */;
+}
+
+div.d_buttons_top {
+    padding: 4px;
+    border-bottom: solid;
+    border-bottom-color: #d0d0d0;
+    border-bottom-width: 1px;
+    overflow: hidden;
+}
+
+div.d_container {
+    margin: 0 auto;
+    text-align: left;
+    max-width: 1200px;
+}
+
+div.d_page_content {
+    padding: 4px 4px 0 184px/* div.d_buttons.width + div.d_buttons.padding.left + div.d_buttons.padding.right + 4 */;
+}
+
+div.d_welcome {    
+    display: inline-block;
+    float: right;
+    font-weight: bold;
+}
+
+/* hr */
+hr.hr_page_header_bar {
+    margin: 0 20px 0 15px;
+    border-color: #000040;
+    border-style: solid;
+    border-width: 6px;
+}

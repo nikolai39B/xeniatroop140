@@ -1,0 +1,77 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4DBC6ED1-47AB-498E-8477-DFE9825EE83A}"
+	ProjectSection(SolutionItems) = preProject
+		app.yaml = app.yaml
+		requestHandler.py = requestHandler.py
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "stylesheets", "stylesheets", "{006683E4-9ECB-4217-8985-F42DC1362D43}"
+	ProjectSection(SolutionItems) = preProject
+		stylesheets\common_classes.css = stylesheets\common_classes.css
+		stylesheets\defaults.css = stylesheets\defaults.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "html", "html", "{F9DBF785-3604-4FF0-AF4A-78A9A1CFAB64}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "source", "source", "{158181A5-2D9C-40B3-86FA-3A50CEB6CEF0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pages", "pages", "{A4489BED-232E-477F-A12D-B877F962A88B}"
+	ProjectSection(SolutionItems) = preProject
+		source\pages\home.py = source\pages\home.py
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utilities", "utilities", "{3E751CEB-3328-481B-87F6-1FF42D12B8A6}"
+	ProjectSection(SolutionItems) = preProject
+		source\utilities\encryptionUtilities.py = source\utilities\encryptionUtilities.py
+		source\utilities\hashSecret.py = source\utilities\hashSecret.py
+		source\utilities\jinjaTemplateRenderer.py = source\utilities\jinjaTemplateRenderer.py
+		source\utilities\userAccountUtilities.py = source\utilities\userAccountUtilities.py
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{4BAF8F1A-0F45-432F-800A-6593D7CC6E5E}"
+	ProjectSection(SolutionItems) = preProject
+		html\templates\buttons_side.html = html\templates\buttons_side.html
+		html\templates\buttons_top.html = html\templates\buttons_top.html
+		html\templates\page_base.html = html\templates\page_base.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{3933B56C-A24A-4EC0-8FDD-3FC80F26BFDF}"
+	ProjectSection(SolutionItems) = preProject
+		html\content\home.html = html\content\home.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "database_models", "database_models", "{CD4B3972-7624-4B62-9084-CACD6936052D}"
+	ProjectSection(SolutionItems) = preProject
+		source\database_models\userAccount.py = source\database_models\userAccount.py
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{006683E4-9ECB-4217-8985-F42DC1362D43} = {4DBC6ED1-47AB-498E-8477-DFE9825EE83A}
+		{F9DBF785-3604-4FF0-AF4A-78A9A1CFAB64} = {4DBC6ED1-47AB-498E-8477-DFE9825EE83A}
+		{158181A5-2D9C-40B3-86FA-3A50CEB6CEF0} = {4DBC6ED1-47AB-498E-8477-DFE9825EE83A}
+		{A4489BED-232E-477F-A12D-B877F962A88B} = {158181A5-2D9C-40B3-86FA-3A50CEB6CEF0}
+		{3E751CEB-3328-481B-87F6-1FF42D12B8A6} = {158181A5-2D9C-40B3-86FA-3A50CEB6CEF0}
+		{4BAF8F1A-0F45-432F-800A-6593D7CC6E5E} = {F9DBF785-3604-4FF0-AF4A-78A9A1CFAB64}
+		{3933B56C-A24A-4EC0-8FDD-3FC80F26BFDF} = {F9DBF785-3604-4FF0-AF4A-78A9A1CFAB64}
+		{CD4B3972-7624-4B62-9084-CACD6936052D} = {158181A5-2D9C-40B3-86FA-3A50CEB6CEF0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		UDUSCENARIO = DEFAULT
+		UDUFILESCOPE = 
+		UDUCUSTOMBUILD = 
+		UDUCUSTOMLIST = 
+		UDUCUSTOM = False
+		UDUDETACHED = False
+		UDUFORCE = False
+		UDUVERBOSE = False
+		UDUDRY = False
+	EndGlobalSection
+EndGlobal

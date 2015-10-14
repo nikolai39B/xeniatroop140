@@ -1,0 +1,16 @@
+﻿/* CSS Defaults */
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+body {
+    margin: 0px;
+    text-align: center;
+}
+
+html {
+    background: #ffffff;
+	color: #000000;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
