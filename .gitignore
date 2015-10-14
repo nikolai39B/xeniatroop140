@@ -1,5 +1,5 @@
 # Secrets file
-source\utilities\hashSecret.py
+source/utilities/hashSecret.py
 
 # Compiled python
 *.pyc

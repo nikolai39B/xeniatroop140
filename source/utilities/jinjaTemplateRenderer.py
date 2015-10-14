@@ -6,9 +6,9 @@ DIRECTORY:
     xeniatroop140/source/utilities
 
 DESCRIPTION:
-    This file contains common utility functions to help handlers render their pages.
-    It includes a method getRenderedPage() which automatically applies titles and
-    content to the page_base.html template as well as other related utilities.
+    This file contains common utility functions to help handlers render their pages and content.
+    It includes a method getRenderedPage() which automatically applies titles and content to 
+    the page_base.html template as well as other related utilities.
 """
 
 # Python
