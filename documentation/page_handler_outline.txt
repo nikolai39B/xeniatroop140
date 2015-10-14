@@ -31,6 +31,11 @@ DESCRIPTION:
 2.  Setup template data at file level (ex.):
         pathToContent = os.path.join(rh.rootDir, 'html/content/someFolder')
         contentFilename = 'sourceFile.html'
+        pageTemplateValues = { 
+            'content_title': 'Content Title',
+            'page_title': 'Page Title',
+            'scripts': [ 'scripts/somejavascript.js' ]
+        }
 
 3.  Define class (ex.):
         class CurrentPage(webapp2.RequestHandler):
@@ -40,5 +45,4 @@ DESCRIPTION:
         1.  verify user account level if necessary
         2.  do necessary processing
         3.  determine the template values for the content
-        4.  determine page_title, content_title, and optionally stylesheets for the page
-        5.  render page using jtr.renderContentAndPage(self, pathToContent, contentFilename, contentTemplateValues, pageTemplateValues)
+        4.  render page using jtr.renderContentAndPage(self, pathToContent, contentFilename, contentTemplateValues, pageTemplateValues)

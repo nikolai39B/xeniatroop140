@@ -27,6 +27,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utilities", "utilities", "{3E751CEB-3328-481B-87F6-1FF42D12B8A6}"
 	ProjectSection(SolutionItems) = preProject
 		source\utilities\encryptionUtilities.py = source\utilities\encryptionUtilities.py
+		source\utilities\handlerUtilities.py = source\utilities\handlerUtilities.py
 		source\utilities\hashSecret.py = source\utilities\hashSecret.py
 		source\utilities\jinjaTemplateRenderer.py = source\utilities\jinjaTemplateRenderer.py
 		source\utilities\userAccountUtilities.py = source\utilities\userAccountUtilities.py
@@ -96,14 +97,14 @@ Global
 		{C670D7F0-E32E-496D-BAFE-A80679F23D03} = {3F556F28-5011-42B2-8B07-11DF92DC8B70}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		UDUDRY = False
-		UDUVERBOSE = False
-		UDUFORCE = False
-		UDUDETACHED = False
-		UDUCUSTOM = False
-		UDUCUSTOMLIST = 
-		UDUCUSTOMBUILD = 
-		UDUFILESCOPE = 
 		UDUSCENARIO = DEFAULT
+		UDUFILESCOPE = 
+		UDUCUSTOMBUILD = 
+		UDUCUSTOMLIST = 
+		UDUCUSTOM = False
+		UDUDETACHED = False
+		UDUFORCE = False
+		UDUVERBOSE = False
+		UDUDRY = False
 	EndGlobalSection
 EndGlobal

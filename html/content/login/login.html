@@ -1,5 +1,8 @@
 <!--
-Requires:
+Optional:
+    error_message (string)
+    password (string)
+    username (string)
 
 Ids:
     lbl_password
@@ -9,17 +12,22 @@ Ids:
     <!-- Username -->
     <div class="d_form_textbox_line">
         <label class="lbl_form_textbox_label" id="lbl_username">Username:</label>
-        <input name="i_username" type="text" />
+        <input name="i_username" type="text" value="{{ username }}"/>
     </div>
 
     <!-- Password -->
     <div class="d_form_textbox_line">
         <label class="lbl_form_textbox_label" id="lbl_password">Password:</label>
-        <input name="i_password" type="password" />
+        <input name="i_password" type="password" value="{{ password }}" />
     </div>
+
+    {% if error_message != None and error_message != "" %}    
+        <!-- Error Message -->
+        <div class="d_error">{{ error_message }}</div>
+    {% endif %}
 
     <!-- Login Button -->
     <div class="d_buttons_page_content">
-        <a class="a_button a_button_page_content" href="/login">Login</a>
+        <input class="button i_button" type="submit" value="Login" >
     </div>
 </form>

@@ -1,6 +1,16 @@
 ﻿/* CSS Common Classes */
 
 /* Generic */
+.button {    
+    font-size: 1em;
+    font-weight: normal;
+    padding: 6px 15px;
+}
+
+.button:hover {
+    background: #ececec;
+}
+
 .header1 {
     font-size: 2.25em;
     font-weight: bold;
@@ -17,7 +27,7 @@
 }
 
 /* a */
-a.a_button {
+/*a.a_button {
     font-size: 1em;
     font-weight: normal;
     padding: 6px 15px;
@@ -25,7 +35,7 @@ a.a_button {
 
 a.a_button:hover {
     background: #ececec;
-}
+}*/
 
 a.a_button_page_content {
     display: inline-block;
@@ -77,6 +87,11 @@ div.d_container {
     max-width: 1200px;
 }
 
+div.d_error {
+    color: #5a0000;
+    text-align: center;
+}
+
 div.d_form_textbox_line {
     margin: 0 0 4px 0;
 }
@@ -97,6 +112,15 @@ hr.hr_page_header_bar {
     border-color: #000040;
     border-style: solid;
     border-width: 6px;
+}
+
+/* input */
+input.i_button {
+    background: none;
+    border: none;
+    display: inline-block;
+    outline: none;
+    text-align: center;   
 }
 
 /* label */

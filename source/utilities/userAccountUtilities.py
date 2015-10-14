@@ -59,10 +59,26 @@ def getLoggedInUser(handler):
 
     # If it passed, try to get the user with that username
     else:
-        user = db.GqlQuery("SELECT * FROM UserAccount "
-                           "WHERE username = :1 "
-                           "LIMIT 1", currentUserUsername)
-        return user.get()
+        return getUserWithUsername(currentUserUsername)
+
+"""
+Checks to see if the given password is correct for the user with
+the given username.
+
+username: the user to check
+password: the password to check
+
+returns: bool
+"""
+def doesUsernameAndPasswordMatch(username, password):
+    user = getUserWithUsername(username)
+
+    # If there is no user with this username, return False
+    if user == None:
+        return False
+
+    # Check the password
+    return enUtil.isHashAndSaltValidForValue(password, user.passwordHashAndSalt)
 
 """
 Creates a new account with given parameters and creates a password hash and salt
@@ -103,6 +119,19 @@ def userAccountParametersAreValid(firstName, lastName, username, password, verif
     return (True, "")
 
 """
+Returns the user with the given username.
+
+username: the username whose user to find
+
+returns UserAccount (or None)
+"""
+def getUserWithUsername(username):
+    userWithUsername = db.GqlQuery("SELECT * FROM UserAccount "
+                                   "WHERE username = :1 "
+                                   "LIMIT 1", username)
+    return userWithUsername.get()
+
+"""
 Checks whether a user with the given username already exists.
 
 username: the username to check
@@ -110,14 +139,8 @@ username: the username to check
 returns: bool
 """
 def userWithUsernameExists(username):
-    # Try to get a user with this username
-    userWithUsername = db.GqlQuery("SELECT * FROM UserAccount "
-                                   "WHERE username = :1 "
-                                   "LIMIT 1", username)
-    userWithUsername = userWithUsername.get()
-
     # If we didn't end up None, there is a user
-    return userWithUsername != None
+    return getUserWithUsername(username) != None
 
 """
 Determines whether the given user account level is meets the required account level.

@@ -73,11 +73,11 @@ def getRenderedPage(handler, templateValues):
     # Render the buttons_top
     tv = {
         'user': 'Guest',
-        'loggedIn': False
+        'logged_in': False
     }
     if currentUser != None:
         tv['user'] = '%s %s' % (currentUser.firstName, currentUser.lastName)
-        tv['loggedIn'] = True
+        tv['logged_in'] = True
     
     templateValues['buttons_top'] = getRenderedTemplateWithEnvironment(jinjaEnv, 'buttons_top.html', tv)
         

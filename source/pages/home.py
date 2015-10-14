@@ -25,13 +25,12 @@ import userAccountUtilities as uau
 # Page Template
 pathToContent = os.path.join(rh.rootDir, 'html/content')
 contentFilename = 'home.html'
+pageTemplateValues = { 
+    'page_title': 'Troop 140',
+    'content_title': 'Our Troop',
+}
 
 class Home(webapp2.RequestHandler):
     def get(self):
-
         # Render the page
-        pageTemplateValues = { 
-            'page_title': 'Troop 140',
-            'content_title': 'Our Troop',
-        }
         jtr.renderContentAndPage(self, pathToContent, contentFilename, {}, pageTemplateValues)
