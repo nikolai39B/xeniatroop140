@@ -39,6 +39,32 @@ loggedOut = 4
 # Methods # 
 #---------#
 """
+Gets the currently logged in UserAccount. The handler is required to get the
+user cookie.
+
+handler: the handler to use to get the cookie
+
+returns: UserAccount
+"""
+def getLoggedInUser(handler):
+    # Fetch and check the cookie
+    cookie = handler.request.cookies.get(userCookieName)
+    if cookie == None:
+        return None
+    currentUserUsername = enUtil.tryGetUserFromCookie(cookie)
+
+    # If the cookie check failed, we have no logged in user
+    if currentUserUsername == None:
+        return None
+
+    # If it passed, try to get the user with that username
+    else:
+        user = db.GqlQuery("SELECT * FROM UserAccount "
+                           "WHERE username = :1 "
+                           "LIMIT 1", currentUserUsername)
+        return user.get()
+
+"""
 Creates a new account with given parameters and creates a password hash and salt
 for the password. Does not check any parameters to ensure they are valid.
 
@@ -86,8 +112,8 @@ returns: bool
 def userWithUsernameExists(username):
     # Try to get a user with this username
     userWithUsername = db.GqlQuery("SELECT * FROM UserAccount "
-                                   "WHERE username = '%s' "
-                                   "LIMIT 1" % username)
+                                   "WHERE username = :1 "
+                                   "LIMIT 1", username)
     userWithUsername = userWithUsername.get()
 
     # If we didn't end up None, there is a user

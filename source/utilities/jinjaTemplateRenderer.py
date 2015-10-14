@@ -21,6 +21,7 @@ import jinja2
 
 # Application
 import requestHandler as rh
+import userAccountUtilities as uau
 
 #----------------#
 # Page Rendering #
@@ -31,20 +32,27 @@ dictionary should contain 'page_title', 'content_title', 'content', optionally
 'stylesheets', and no other values. Any additional templating to be done to 'content' should
 be done before calling this method.
 
+handler: the current page handler
 templateValues: a dictionary of values for the template
 
 returns: string
 """    
-def getRenderedPage(templateValues):
+def getRenderedPage(handler, templateValues):
     # Get an environment for the html blocks
     jinjaEnv = getJinjaEnv(os.path.join(rh.rootDir, 'html/templates'))
 
+    # Get the current user
+    currentUser = uau.getLoggedInUser(handler)
+
     # Render the buttons_top
-    # TODO: process this based on whether or not the user is logged in
     tv = {
-        'user': 'Will Hauber',
-        'loggedIn': True
+        'user': 'Guest',
+        'loggedIn': False
     }
+    if currentUser != None:
+        tv['user'] = '%s %s' % (currentUser.firstName, currentUser.lastName)
+        tv['loggedIn'] = True
+    
     templateValues['buttons_top'] = getRenderedTemplateWithEnvironment(jinjaEnv, 'buttons_top.html', tv)
         
     # Render the buttons_side

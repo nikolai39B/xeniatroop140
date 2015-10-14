@@ -1,0 +1,44 @@
+"""
+FILE:
+    page_handler_outline.py
+ 
+DIRECTORY:
+    xeniatroop140/documentation
+
+DESCRIPTION:
+    This file describes the general outline for web page handlers. Some
+    handlers may deviate, but in general most should follow this flow.
+"""
+
+1.  Add imports
+    a.  Add Python imports (ex.):
+            # Python
+            import logging
+            import os
+            import sys
+
+    b.  Add GAE imports (ex.):
+            # GAE
+            import jinja2
+            import webapp2
+
+    c.  Add Application imports (ex.):
+            # Application
+            import jinjaTemplateRenderer as jtr
+            import requestHandler as rh
+            import userAccountUtilities as uau
+
+2.  Setup template data at file level (ex.):
+        pathToContent = os.path.join(rh.rootDir, 'html/content/someFolder')
+        contentFilename = 'sourceFile.html'
+
+3.  Define class (ex.):
+        class CurrentPage(webapp2.RequestHandler):
+
+4.  Define methods:
+    a.  get() method:
+        1.  do necessary processing
+        2.  determine the template values for the content
+        3.  render content using jtr.getRenderedTemplate(pathToContent, contentFilename, templateValues)
+        4.  determine page_title, content_title, and optionally stylesheets for the page
+        5.  render page using self.response.write(jtr.getRenderedPage(self, templateValues))

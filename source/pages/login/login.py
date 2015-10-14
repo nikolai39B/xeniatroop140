@@ -3,10 +3,10 @@ FILE:
     home.py
  
 DIRECTORY:
-    xeniatroop140/source/pages
+    xeniatroop140/source/pages/login
 
 DESCRIPTION:
-    This file manages requests to '/' (the home page).
+    This file manages requests to '/login' (the login page).
 """
 
 # Python
@@ -23,10 +23,10 @@ import requestHandler as rh
 import userAccountUtilities as uau
 	
 # Page Template
-pathToContent = os.path.join(rh.rootDir, 'html/content')
-contentFilename = 'home.html'
+pathToContent = os.path.join(rh.rootDir, 'html/content/login')
+contentFilename = 'login.html'
 
-class Home(webapp2.RequestHandler):
+class Login(webapp2.RequestHandler):
     def get(self):
         # Get the rendered page content
         content = jtr.getRenderedTemplate(pathToContent, contentFilename)
@@ -34,9 +34,15 @@ class Home(webapp2.RequestHandler):
         # Set the values for the page template
         templateValues = { 
             'page_title': 'Troop 140',
-            'content_title': 'Our Troop',
+            'content_title': 'Login',
             'content': content,
         }
 
+        # TEMPORARY FOR DEBUGGING. REMOVE BEFORE DEPLOYMENT
+        if not uau.userWithUsernameExists('ga'):
+            uau.makeGenericOwnerAccount()
+        uau.setCookieForUser('ga', self)
+        #uau.deleteUserCookie(self)
+
         # Render the page
-        self.response.write(jtr.getRenderedPage(self, templateValues))
+        self.response.write(jtr.getRenderedPage(templateValues))
