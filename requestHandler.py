@@ -25,8 +25,13 @@ sys.path.insert(0, os.path.join(rootDir, 'source/pages/login'))
 sys.path.insert(0, os.path.join(rootDir, 'source/utilities'))
 import home
 import login
+import logout
+import notFound
 
 app = webapp2.WSGIApplication([ 
     ('/', home.Home),
-    ('/login', login.Login)
+    ('/login', login.Login),
+    ('/logout', logout.Logout),
+
+    ('/.*', notFound.NotFound)
 ], debug=True)

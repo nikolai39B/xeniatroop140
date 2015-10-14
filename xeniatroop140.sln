@@ -22,6 +22,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pages", "pages", "{A4489BED-232E-477F-A12D-B877F962A88B}"
 	ProjectSection(SolutionItems) = preProject
 		source\pages\home.py = source\pages\home.py
+		source\pages\notFound.py = source\pages\notFound.py
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utilities", "utilities", "{3E751CEB-3328-481B-87F6-1FF42D12B8A6}"
@@ -43,6 +44,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{3933B56C-A24A-4EC0-8FDD-3FC80F26BFDF}"
 	ProjectSection(SolutionItems) = preProject
 		html\content\home.html = html\content\home.html
+		html\content\notFound.html = html\content\notFound.html
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "database_models", "database_models", "{CD4B3972-7624-4B62-9084-CACD6936052D}"
@@ -53,6 +55,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "login", "login", "{C2C0E340-DA2F-4808-826B-12FB0820FB91}"
 	ProjectSection(SolutionItems) = preProject
 		source\pages\login\login.py = source\pages\login\login.py
+		source\pages\login\logout.py = source\pages\login\logout.py
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "login", "login", "{14F18BE8-CF24-482F-B170-BF35F09B1A4C}"

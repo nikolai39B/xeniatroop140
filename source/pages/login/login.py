@@ -60,6 +60,7 @@ class Login(webapp2.RequestHandler):
         # If they were correct, log in
         if success:
             uau.setCookieForUser(username, self)
+            self.redirect('/')
             
         # Otherwise, let the user know that there was an error
         else:
