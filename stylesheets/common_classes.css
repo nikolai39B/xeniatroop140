@@ -12,7 +12,7 @@
     color: #000040;
     font-size: 1.5em;
     padding: 10px;
-    margin: 0;
+    margin: 0 0 0 184px/* div.d_page_content.margin */;
     text-align: center;
 }
 
@@ -25,6 +25,11 @@ a.a_button {
 
 a.a_button:hover {
     background: #ececec;
+}
+
+a.a_button_page_content {
+    display: inline-block;
+    text-align: center;
 }
 
 a.a_button_side {
@@ -46,6 +51,11 @@ a.a_page_header {
 }
 
 /* div */
+div.d_buttons_page_content {
+    padding: 4px;
+    text-align: center;
+}
+
 div.d_buttons_side {
     display: inline-block;
     float: left;
@@ -72,7 +82,7 @@ div.d_form_textbox_line {
 }
 
 div.d_page_content {
-    padding: 4px 4px 0 184px/* div.d_buttons.width + div.d_buttons.padding.left + div.d_buttons.padding.right + 4 */;
+    margin: 4px 4px 0 184px/* div.d_buttons.width + div.d_buttons.padding.left + div.d_buttons.padding.right + 4 */;
 }
 
 div.d_welcome {    

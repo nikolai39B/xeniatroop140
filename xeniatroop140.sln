@@ -66,7 +66,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "documentation", "documentat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{3F556F28-5011-42B2-8B07-11DF92DC8B70}"
 	ProjectSection(SolutionItems) = preProject
-		scripts\centerFormElements.js = scripts\centerFormElements.js
+		scripts\eventUtilities.js = scripts\eventUtilities.js
+		scripts\formObjectsUtilities.js = scripts\formObjectsUtilities.js
+		scripts\jquery-1.11.3.js = scripts\jquery-1.11.3.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "login", "login", "{C670D7F0-E32E-496D-BAFE-A80679F23D03}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\login\login.js = scripts\login\login.js
 	EndProjectSection
 EndProject
 Global
@@ -86,16 +93,17 @@ Global
 		{CD4B3972-7624-4B62-9084-CACD6936052D} = {158181A5-2D9C-40B3-86FA-3A50CEB6CEF0}
 		{C2C0E340-DA2F-4808-826B-12FB0820FB91} = {A4489BED-232E-477F-A12D-B877F962A88B}
 		{14F18BE8-CF24-482F-B170-BF35F09B1A4C} = {3933B56C-A24A-4EC0-8FDD-3FC80F26BFDF}
+		{C670D7F0-E32E-496D-BAFE-A80679F23D03} = {3F556F28-5011-42B2-8B07-11DF92DC8B70}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		UDUSCENARIO = DEFAULT
-		UDUFILESCOPE = 
-		UDUCUSTOMBUILD = 
-		UDUCUSTOMLIST = 
-		UDUCUSTOM = False
-		UDUDETACHED = False
-		UDUFORCE = False
-		UDUVERBOSE = False
 		UDUDRY = False
+		UDUVERBOSE = False
+		UDUFORCE = False
+		UDUDETACHED = False
+		UDUCUSTOM = False
+		UDUCUSTOMLIST = 
+		UDUCUSTOMBUILD = 
+		UDUFILESCOPE = 
+		UDUSCENARIO = DEFAULT
 	EndGlobalSection
 EndGlobal

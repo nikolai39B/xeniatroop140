@@ -32,12 +32,13 @@ class Login(webapp2.RequestHandler):
         # TEMPORARY FOR DEBUGGING. REMOVE BEFORE DEPLOYMENT
         if not uau.userWithUsernameExists('ga'):
             uau.makeGenericOwnerAccount()
-        #uau.setCookieForUser('ga', self)
+        uau.setCookieForUser('ga', self)
         #uau.deleteUserCookie(self)
 
         # Render the page
         pageTemplateValues = { 
-            'page_title': 'Troop 140',
             'content_title': 'Login',
+            'page_title': 'Troop 140',
+            'scripts': [ 'scripts/login/login.js' ]
         }
         jtr.renderContentAndPage(self, pathToContent, contentFilename, {}, pageTemplateValues)

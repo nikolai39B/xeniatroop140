@@ -1,16 +1,25 @@
+<!--
+Requires:
+
+Ids:
+    lbl_password
+    lbl_username
+-->
 <form method="post">
     <!-- Username -->
     <div class="d_form_textbox_line">
-        <label class="lbl_form_textbox_label">Username:</label>
+        <label class="lbl_form_textbox_label" id="lbl_username">Username:</label>
         <input name="i_username" type="text" />
     </div>
 
     <!-- Password -->
     <div class="d_form_textbox_line">
-        <label class="lbl_form_textbox_label">Password:</label>
+        <label class="lbl_form_textbox_label" id="lbl_password">Password:</label>
         <input name="i_password" type="password" />
     </div>
 
     <!-- Login Button -->
-    <a class="a_button a_button_top" href="/login">Login</a>
+    <div class="d_buttons_page_content">
+        <a class="a_button a_button_page_content" href="/login">Login</a>
+    </div>
 </form>

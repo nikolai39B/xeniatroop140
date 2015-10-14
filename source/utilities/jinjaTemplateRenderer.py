@@ -31,7 +31,7 @@ Renders the content and page with their respective template values, then writes 
 page using the handler. The contentTemplateValues dictionary contains the template values for the
 page's content, and the pageTemplateValues dictionary contains the additional template values for
 page_base.html. The pageTemplateValues dictionary should contain 'page_title', 'content_title', and
-optionally 'stylesheets'.
+optionally 'scripts and 'stylesheets'.
 
 handler: the current page handler
 pathToContent: the path to the content template
@@ -55,8 +55,8 @@ def renderContentAndPage(handler, pathToContent, contentFilename, contentTemplat
 """
 Renders and returns page_base.html after inserting the template values. The templateValues
 dictionary should contain 'page_title', 'content_title', 'content', optionally
-'stylesheets', and no other values. Any additional templating to be done to 'content' should
-be done before calling this method.
+'scripts' and 'stylesheets', and no other values. Any additional templating to be done to 'content'
+should be done before calling this method.
 
 handler: the current page handler
 templateValues: a dictionary of values for the template
