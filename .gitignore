@@ -1,5 +1,8 @@
 # Secrets file
 source/utilities/hashSecret.py
 
+# Solution user options
+*.suo
+
 # Compiled python
 *.pyc
