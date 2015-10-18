@@ -1,4 +1,7 @@
 <!--
+Optional:
+    photos (array of photos, length <= 3)
+
 -->
 <div class="header3">Who We Are</div>
 <div>
@@ -6,6 +9,11 @@
     of this national organization and serves as a local platform for personal development.
 </div>
 <br />
+
+<!-- Photo 1 -->
+{% if photos|length() >= 1 and photos[0] != None %}
+
+{% endif %}
 
 <div class="header3">What We Do</div>
 <div>
@@ -22,6 +30,11 @@
 </div>
 <br />
 
+<!-- Photo 2-->
+{% if photos|length() >= 2 and photos[1] != None %}
+
+{% endif %}
+
 <div class="header3">Our Mission</div>
 <div>
     Our mission is to train young scouts to become active citizens, good leaders, and great men who live by the Scout Law.
@@ -34,6 +47,11 @@
     operations of the troop and help plan upcoming events. Adult participation in these meetings and in troop operations as a whole is primarily an advisory role.
 </div>
 <br />
+
+<!-- Photo 3 -->
+{% if photos|length() >= 3 and photos[2] != None %}
+
+{% endif %}
 
 <div class="header3">General Information</div>
 <div class="d_address">
