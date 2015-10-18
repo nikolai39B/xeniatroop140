@@ -18,10 +18,10 @@ import sys
 import webapp2
 
 # Application
-import handlerUtilities as hr
-import jinjaTemplateRenderer as jtr
 import requestHandler as rh
-import userAccountUtilities as uau
+import source.utilities.handlerUtilities as hr
+import source.utilities.jinjaTemplateRenderer as jtr
+import source.utilities.userAccountUtilities as uau
 	
 # Page Template
 pathToContent = os.path.join(rh.rootDir, 'html/content/login')

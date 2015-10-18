@@ -18,7 +18,7 @@ import sys
 import webapp2
 
 # Application
-import userAccountUtilities as uau
+import source.utilities.userAccountUtilities as uau
 	
 # Page Template
 # Note: this page has no content; it always redirects to '/'.

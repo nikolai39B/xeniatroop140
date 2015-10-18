@@ -14,7 +14,7 @@ import random
 import string
 
 # Application
-import hashSecret as hs
+import source.utilities.hashSecret as hs
 
 #------#
 # Data #
@@ -31,15 +31,15 @@ numCookieItems = 3
 #---------#
 # Methods #
 #---------#
-"""
-Returns the username from the cookie if the cookie is valid, or None if the cookie
-is invalid.
-
-cookie: the cookie to attempt to get the user from
-
-returns string (or None)
-"""
 def tryGetUserFromCookie(cookie):
+    """
+    Returns the username from the cookie if the cookie is valid, or None if the cookie
+    is invalid.
+
+    cookie: the cookie to attempt to get the user from
+
+    returns string (or None)
+    """
     # Make sure we have the right number of items
     items = cookie.split('|')
     if len(items) != numCookieItems:
@@ -57,17 +57,16 @@ def tryGetUserFromCookie(cookie):
     else:
         return None
 
-
-"""
-Checks the given value against the hash and salt. Will throw a ValueError if
-the hashAndSalt string is not in the correct form.
-
-value: the value to check
-hashAndSalt: the hash and salt to check the value against
-
-returns: bool
-"""
 def isHashAndSaltValidForValue(value, hashAndSalt):
+    """
+    Checks the given value against the hash and salt. Will throw a ValueError if
+    the hashAndSalt string is not in the correct form.
+
+    value: the value to check
+    hashAndSalt: the hash and salt to check the value against
+
+    returns: bool
+    """
     # Make sure we have the right number of items
     items = hashAndSalt.split('|')
     if len(items) != numHashAndSaltItems:
@@ -82,17 +81,17 @@ def isHashAndSaltValidForValue(value, hashAndSalt):
     hashAndSaltForValue = makeHashAndSaltString(value, salt)
     return hashAndSalt == hashAndSaltForValue
 
-"""
-Makes a hash from a given value and salt. If no salt is provided, one is generated.
-Salt must be of the correct length, or a ValueError will be thrown. The resulting
-string is of the form 'hash|salt'.
-
-value: the value for which to make a hash
-salt: the salt string (or None for a new salt)
-
-returns: the new hash
-"""
 def makeHashAndSaltString(value, salt = None):
+    """
+    Makes a hash from a given value and salt. If no salt is provided, one is generated.
+    Salt must be of the correct length, or a ValueError will be thrown. The resulting
+    string is of the form 'hash|salt'.
+
+    value: the value for which to make a hash
+    salt: the salt string (or None for a new salt)
+
+    returns: the new hash
+    """
     # Generate a salt if necesary
     if salt == None:
         salt = makeSalt()
@@ -105,16 +104,16 @@ def makeHashAndSaltString(value, salt = None):
     hash = hs.makeHash(value, salt)
     return hashAndSaltTemplate % (hash, salt)
 
-"""
-Makes a cookie for the given value that contains the value, a hash of the value,
-and the salt.
-
-value: the value to make the cookie with
-salt: the salt string (or None for a new salt)
-
-returns: string
-"""
 def makeCookieForValue(value, salt = None):
+    """
+    Makes a cookie for the given value that contains the value, a hash of the value,
+    and the salt.
+
+    value: the value to make the cookie with
+    salt: the salt string (or None for a new salt)
+
+    returns: string
+    """
     # Get the hash and salt
     hashAndSalt = makeHashAndSaltString(value, salt).split('|')
     hash = hashAndSalt[0]
@@ -123,10 +122,10 @@ def makeCookieForValue(value, salt = None):
     # Make the cookie
     return cookieTemplate % (value, hash, salt)
 
-"""
-Generates and returns a salt of random letters.
-
-returns: the new salt
-"""
 def makeSalt():
+    """
+    Generates and returns a salt of random letters.
+
+    returns: the new salt
+    """
     return ''.join(random.choice(string.letters) for x in xrange(saltLength))

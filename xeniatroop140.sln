@@ -31,6 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utilities", "utilities", "{
 		source\utilities\handlerUtilities.py = source\utilities\handlerUtilities.py
 		source\utilities\hashSecret.py = source\utilities\hashSecret.py
 		source\utilities\jinjaTemplateRenderer.py = source\utilities\jinjaTemplateRenderer.py
+		source\utilities\outingUtilities.py = source\utilities\outingUtilities.py
 		source\utilities\userAccountUtilities.py = source\utilities\userAccountUtilities.py
 	EndProjectSection
 EndProject
@@ -49,6 +50,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{3933
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "database_models", "database_models", "{CD4B3972-7624-4B62-9084-CACD6936052D}"
 	ProjectSection(SolutionItems) = preProject
+		source\database_models\outing.py = source\database_models\outing.py
 		source\database_models\userAccount.py = source\database_models\userAccount.py
 	EndProjectSection
 EndProject
@@ -90,6 +92,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "outings", "outings", "{F21A
 		html\content\outings\outings.html = html\content\outings\outings.html
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "outings", "outings", "{444150B2-BC49-4EB9-B087-AF6156043836}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\outings\outings.js = scripts\outings\outings.js
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,16 +117,17 @@ Global
 		{C670D7F0-E32E-496D-BAFE-A80679F23D03} = {3F556F28-5011-42B2-8B07-11DF92DC8B70}
 		{2EFD0835-C937-415F-8570-B5CB29C894C8} = {A4489BED-232E-477F-A12D-B877F962A88B}
 		{F21A977B-5AED-44D2-A989-AFEB10F0CDF9} = {3933B56C-A24A-4EC0-8FDD-3FC80F26BFDF}
+		{444150B2-BC49-4EB9-B087-AF6156043836} = {3F556F28-5011-42B2-8B07-11DF92DC8B70}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		UDUDRY = False
-		UDUVERBOSE = False
-		UDUFORCE = False
-		UDUDETACHED = False
-		UDUCUSTOM = False
-		UDUCUSTOMLIST = 
-		UDUCUSTOMBUILD = 
-		UDUFILESCOPE = 
 		UDUSCENARIO = DEFAULT
+		UDUFILESCOPE = 
+		UDUCUSTOMBUILD = 
+		UDUCUSTOMLIST = 
+		UDUCUSTOM = False
+		UDUDETACHED = False
+		UDUFORCE = False
+		UDUVERBOSE = False
+		UDUDRY = False
 	EndGlobalSection
 EndGlobal

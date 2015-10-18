@@ -10,17 +10,14 @@ DESCRIPTION:
 """
 
 # Python
-import logging
 import os
-import sys
 
 # GAE
 import webapp2
 
 # Application
-import jinjaTemplateRenderer as jtr
 import requestHandler as rh
-import userAccountUtilities as uau
+import source.utilities.jinjaTemplateRenderer as jtr
 	
 # Page Template
 pathToContent = os.path.join(rh.rootDir, 'html/content')
