@@ -37,6 +37,7 @@ class Outings(webapp2.RequestHandler):
 
         # FOR DEBUGGING
         # Add some events
+        """
         newOuting = ou.createOuting(
             outingName = 'Test',
             departureTime = datetime.datetime.now() - datetime.timedelta(days=3),
@@ -48,6 +49,7 @@ class Outings(webapp2.RequestHandler):
         newOuting.put()
 
         time.sleep(1)
+        """
         # END
 
         contentTemplateValues = {
