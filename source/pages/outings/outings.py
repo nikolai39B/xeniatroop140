@@ -22,6 +22,7 @@ import webapp2
 import requestHandler as rh
 import source.utilities.outingUtilities as ou
 import source.utilities.jinjaTemplateRenderer as jtr
+import source.utilities.userAccountUtilities as uau
 	
 # Page Template
 pathToContent = os.path.join(rh.rootDir, 'html/content/outings')
@@ -29,7 +30,8 @@ contentFilename = 'outings.html'
 pageTemplateValues = { 
     'content_title': 'Outings',
     'page_title': 'Troop 140',
-    'scripts': [ 'scripts/login/outings.js' ]
+    'scripts': [ 'scripts/outings/outings.js' ],
+    'stylesheets': [ 'stylesheets/outings/outings.css' ]
 }
 
 class Outings(webapp2.RequestHandler):
@@ -52,7 +54,15 @@ class Outings(webapp2.RequestHandler):
         """
         # END
 
+        # Determine if the user can add an outing
+        loggedInUser = uau.getLoggedInUser(self)
+        canAddOuting = False
+        if loggedInUser != None and uau.doesUserHavePermission(loggedInUser.accountLevel, uau.poster):
+            canAddOuting = True
+
         contentTemplateValues = {
+            'can_add_outing': canAddOuting,
+            'outings': ou.getRenderedOutings(ou.getOutingInstances())
         }
 
         # Render the page

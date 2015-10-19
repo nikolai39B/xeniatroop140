@@ -1,0 +1,9 @@
+/* CSS for Outings */
+
+/* div */
+div.d_outing_row_half {
+    display: inline-block;
+    font-style: italic;
+    vertical-align: top;
+    width: 200px;
+}
