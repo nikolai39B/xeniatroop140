@@ -1,12 +1,24 @@
+/// <reference path="referencePaths.js" />
+
 /* 
-Constructs a new delegate using the old delegate and the new method.
+FILE:
+    eventUtilities.js
 
-oldDelegate: the old delegate to use
-funcToAdd: the new method to add to the delegate
+DIRECTORY:
+    xeniatroop140/scripts
 
-returns: function
+DESCRIPTION:
+    This file contians the functions to safely handle events.
 */
+
 function buildNewEvent(oldDelegate, funcToAdd) {
+    /// <summary>
+    /// Constructs a new delegate using the old delegate and the new method.
+    /// </summary>
+    /// <param name="oldDelegate" type="function">The old delegate to use.</param>
+    /// <param name="funcToAdd" type="function">The new method to add to the delegate.</param>
+    /// <returns type="function">The new delegate.</returns>    
+
     // If the old delegate isn't a function, simply return the
     // new function
     if (typeof oldDelegate != 'function') {

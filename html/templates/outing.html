@@ -8,13 +8,17 @@ Requires:
     <!-- Name -->
     <div class="header4">{{ outing.outingName }}</div>
 
+    <!--
+    Note: The second div in the timing and location categories begin on the first line for formatting reasons.
+    -->
+
     <!-- Timing -->
-    <div class="d_outing_row_half" id="{{ id }}_row_half_0">Depart: {{ outing.departureTime.strftime(datetime_format) }}</div>
-    <div class="d_outing_row_half" id="{{ id }}_row_half_1">Return: {{ outing.returnTime.strftime(datetime_format) }}</div><br />
+    <div class="d_outing_row_half" id="{{ id }}_row_half_0">Depart: {{ outing.departureTime.strftime(datetime_format) }}</div><div
+         class="d_outing_row_half" id="{{ id }}_row_half_1">Return: {{ outing.returnTime.strftime(datetime_format) }}</div><br />
 
     <!-- Location -->
-    <div class="d_outing_row_half" id="{{ id }}_row_half_2">Meet: {{ outing.meetLocation }}</div>
-    <div class="d_outing_row_half" id="{{ id }}_row_half_3">Outing: {{ outing.outingLocation }}</div>
+    <div class="d_outing_row_half" id="{{ id }}_row_half_2">Meet: {{ outing.meetLocation }}</div><div 
+         class="d_outing_row_half" id="{{ id }}_row_half_3">Outing: {{ outing.outingLocation }}</div>
 
     <!-- Description -->
     <div>
@@ -26,6 +30,6 @@ Requires:
 
     <!-- Auto-center -->
     <script>
-        addSetElementWidthToHalfEventsForOuting({{ id }});
+        addResizeWidthsEventsForOutingRows({{ id }});
     </script>
 </a>

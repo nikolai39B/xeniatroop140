@@ -21,15 +21,15 @@ Ids:
     <meta charset="utf-8" />
 
     <!-- Stylesheets -->
-    <link href="stylesheets/defaults.css" rel="stylesheet" type="text/css">
     <link href="stylesheets/common_classes.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/defaults.css" rel="stylesheet" type="text/css">
     {% for sheet in stylesheets %}
         <link href="{{ sheet }}" rel="stylesheet" type="text/css">
     {% endfor %}
 
     <!-- Scripts -->
+    <script src="scripts/dynamicResizing.js" type="text/javascript"></script>
     <script src="scripts/eventUtilities.js" type="text/javascript"></script>
-    <script src="scripts/formObjectsUtilities.js" type="text/javascript"></script>
     {% for script in scripts %}
         <script src="{{ script }}" type="text/javascript"></script>
     {% endfor %}

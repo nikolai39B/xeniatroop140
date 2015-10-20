@@ -30,7 +30,7 @@ contentFilename = 'outings.html'
 pageTemplateValues = { 
     'content_title': 'Outings',
     'page_title': 'Troop 140',
-    'scripts': [ 'scripts/outings/outings.js' ],
+    'scripts': [ 'scripts/outings.js' ],
     'stylesheets': [ 'stylesheets/outings/outings.css' ]
 }
 

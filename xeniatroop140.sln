@@ -73,14 +73,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "documentation", "documentat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{3F556F28-5011-42B2-8B07-11DF92DC8B70}"
 	ProjectSection(SolutionItems) = preProject
+		scripts\dynamicResizing.js = scripts\dynamicResizing.js
 		scripts\eventUtilities.js = scripts\eventUtilities.js
-		scripts\formObjectsUtilities.js = scripts\formObjectsUtilities.js
 		scripts\jquery-1.11.3.js = scripts\jquery-1.11.3.js
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "login", "login", "{C670D7F0-E32E-496D-BAFE-A80679F23D03}"
-	ProjectSection(SolutionItems) = preProject
-		scripts\login\login.js = scripts\login\login.js
+		scripts\jsXmlComment.txt = scripts\jsXmlComment.txt
+		scripts\login.js = scripts\login.js
+		scripts\outings.js = scripts\outings.js
+		scripts\referencePaths.js = scripts\referencePaths.js
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "outings", "outings", "{2EFD0835-C937-415F-8570-B5CB29C894C8}"
@@ -91,11 +90,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "outings", "outings", "{F21A977B-5AED-44D2-A989-AFEB10F0CDF9}"
 	ProjectSection(SolutionItems) = preProject
 		html\content\outings\outings.html = html\content\outings\outings.html
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "outings", "outings", "{444150B2-BC49-4EB9-B087-AF6156043836}"
-	ProjectSection(SolutionItems) = preProject
-		scripts\outings\outings.js = scripts\outings\outings.js
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "outings", "outings", "{89CE2030-91F9-4F4F-8AF5-8CF8953EAFAC}"
@@ -123,8 +117,6 @@ Global
 		{2EFD0835-C937-415F-8570-B5CB29C894C8} = {A4489BED-232E-477F-A12D-B877F962A88B}
 		{14F18BE8-CF24-482F-B170-BF35F09B1A4C} = {3933B56C-A24A-4EC0-8FDD-3FC80F26BFDF}
 		{F21A977B-5AED-44D2-A989-AFEB10F0CDF9} = {3933B56C-A24A-4EC0-8FDD-3FC80F26BFDF}
-		{C670D7F0-E32E-496D-BAFE-A80679F23D03} = {3F556F28-5011-42B2-8B07-11DF92DC8B70}
-		{444150B2-BC49-4EB9-B087-AF6156043836} = {3F556F28-5011-42B2-8B07-11DF92DC8B70}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		UDUDRY = False
