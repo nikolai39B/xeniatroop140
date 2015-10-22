@@ -24,6 +24,7 @@ from source.pages import home
 from source.pages.login import login
 from source.pages.login import logout
 from source.pages.outings import outings
+from source.pages.outings import outings_add
 
 from source.pages import notFound
 
@@ -35,6 +36,7 @@ app = webapp2.WSGIApplication([
     ('/login', login.Login),
     ('/logout', logout.Logout),
     ('/outings', outings.Outings),
+    ('/outings/add', outings_add.Outings_Add),
 
     ('/.*', notFound.NotFound)
 ], debug=True)

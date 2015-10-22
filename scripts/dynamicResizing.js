@@ -11,6 +11,9 @@ DESCRIPTION:
     This file contians the functions to dynamically resize and center content. Most of these
     methods are designed to be called on window load and resize to insure that the given
     elements remain in the same relative location.
+
+    NOTE: These capabilities should be obtainable using only css. As a result, don't use these methods
+    unless you have too.
 */
 
 function resizeWidthBasedOnObject(referenceElementId, elementIdsToSet, percentRefWidth, removePadding, offset) {

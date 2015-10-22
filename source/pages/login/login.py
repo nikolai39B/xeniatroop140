@@ -29,7 +29,7 @@ contentFilename = 'login.html'
 pageTemplateValues = { 
     'content_title': 'Login',
     'page_title': 'Troop 140',
-    'scripts': [ 'scripts/login.js' ]
+    #'scripts': [ 'scripts/login.js' ]
 }
 
 class Login(webapp2.RequestHandler):

@@ -28,7 +28,12 @@ Ids:
     {% endfor %}
 
     <!-- Scripts -->
-    <script src="scripts/dynamicResizing.js" type="text/javascript"></script>
+    <!-- 
+        This is commented out because the features this script provides should be
+        obtainable using only css. Include the file for each specific page that needs it
+        (if any even do).
+        <script src="scripts/dynamicResizing.js" type="text/javascript"></script>
+     -->
     <script src="scripts/eventUtilities.js" type="text/javascript"></script>
     {% for script in scripts %}
         <script src="{{ script }}" type="text/javascript"></script>

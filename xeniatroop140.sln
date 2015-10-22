@@ -40,6 +40,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templates", "templates", "{
 		html\templates\buttons_side.html = html\templates\buttons_side.html
 		html\templates\buttons_top.html = html\templates\buttons_top.html
 		html\templates\outing.html = html\templates\outing.html
+		html\templates\outings_buttons_top.html = html\templates\outings_buttons_top.html
 		html\templates\page_base.html = html\templates\page_base.html
 	EndProjectSection
 EndProject
@@ -85,11 +86,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "outings", "outings", "{2EFD0835-C937-415F-8570-B5CB29C894C8}"
 	ProjectSection(SolutionItems) = preProject
 		source\pages\outings\outings.py = source\pages\outings\outings.py
+		source\pages\outings\outings_add.py = source\pages\outings\outings_add.py
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "outings", "outings", "{F21A977B-5AED-44D2-A989-AFEB10F0CDF9}"
 	ProjectSection(SolutionItems) = preProject
 		html\content\outings\outings.html = html\content\outings\outings.html
+		html\content\outings\outings_add.html = html\content\outings\outings_add.html
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "outings", "outings", "{89CE2030-91F9-4F4F-8AF5-8CF8953EAFAC}"
@@ -119,14 +122,14 @@ Global
 		{F21A977B-5AED-44D2-A989-AFEB10F0CDF9} = {3933B56C-A24A-4EC0-8FDD-3FC80F26BFDF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		UDUDRY = False
-		UDUVERBOSE = False
-		UDUFORCE = False
-		UDUDETACHED = False
-		UDUCUSTOM = False
-		UDUCUSTOMLIST = 
-		UDUCUSTOMBUILD = 
-		UDUFILESCOPE = 
 		UDUSCENARIO = DEFAULT
+		UDUFILESCOPE = 
+		UDUCUSTOMBUILD = 
+		UDUCUSTOMLIST = 
+		UDUCUSTOM = False
+		UDUDETACHED = False
+		UDUFORCE = False
+		UDUVERBOSE = False
+		UDUDRY = False
 	EndGlobalSection
 EndGlobal

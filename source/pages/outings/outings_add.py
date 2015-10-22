@@ -1,12 +1,12 @@
 ﻿"""
 FILE:
-    outings.py
+    outings_add.py
  
 DIRECTORY:
     xeniatroop140/source/pages/outings
 
 DESCRIPTION:
-    This file manages requests to '/outings' (the outings page).
+    This file manages requests to '/outings/add' (the add outings page).
 """
 
 # Python
@@ -26,15 +26,13 @@ import source.utilities.userAccountUtilities as uau
 	
 # Page Template
 pathToContent = os.path.join(rh.rootDir, 'html/content/outings')
-contentFilename = 'outings.html'
+contentFilename = 'outings_add.html'
 pageTemplateValues = { 
-    'content_title': 'All Outings',
+    'content_title': 'Add an Outing',
     'page_title': 'Troop 140',
-    #'scripts': [ 'scripts/outings.js' ],
-    'stylesheets': [ 'stylesheets/outings/outings.css' ]
 }
 
-class Outings(webapp2.RequestHandler):
+class Outings_Add(webapp2.RequestHandler):
     def get(self):
 
         # FOR DEBUGGING
@@ -54,11 +52,10 @@ class Outings(webapp2.RequestHandler):
         """
         # END
 
-        
+        # Determine if the user can add an outing
 
         contentTemplateValues = {
-            'buttons_top': ou.getOutingButtonsTop(self),
-            'outings': ou.getRenderedOutings(ou.getOutingInstances())
+            'buttons_top': ou.getOutingButtonsTop(self)
         }
 
         # Render the page

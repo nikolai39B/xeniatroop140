@@ -11,6 +11,7 @@ DESCRIPTION:
     This file contians the function to add the events to automatically resize the outing div elements.
 */
 
+/* NOTE: this is commented out because I realized I could accomplish the effect using css.
 function addResizeWidthsEventsForOutingRows(outingId) {
     /// <summary>
     /// Adds delegates to the window.onload and window.onresize events to call resizeWidthBasedOnObject() for the elements
@@ -30,5 +31,5 @@ function addResizeWidthsEventsForOutingRows(outingId) {
 
     var percentageOfWidthOfContainer = 0.5;
 
-    addResizeWidthsEvents(referenceObjectId, elementIdsToSet, percentageOfWidthOfContainer, true, 0);
-}
+    //addResizeWidthsEvents(referenceObjectId, elementIdsToSet, percentageOfWidthOfContainer, true, 0);
+} */

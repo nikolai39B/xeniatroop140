@@ -21,12 +21,14 @@ from google.appengine.ext import db
 # Application
 import source.database_models.outing as outing
 import source.utilities.jinjaTemplateRenderer as jtr
+import source.utilities.userAccountUtilities as uau
 
 #------#
 # Data #
 #------#
-pathToOutingTemplate = 'html/templates'
+pathToOutingTemplates = 'html/templates'
 outingTemplateName = 'outing.html'
+buttonsTopTemplateName = 'outings_buttons_top.html'
 
 #---------#
 # Methods #
@@ -63,7 +65,7 @@ def getRenderedOuting(outing):
 
     returns: string
     """
-    return jtr.getRenderedTemplate(pathToOutingTemplate, outingTemplateName, { 'outing': outing })
+    return jtr.getRenderedTemplate(pathToOutingTemplates, outingTemplateName, { 'outing': outing })
 
 def getRenderedOutings(outings):
     """
@@ -96,3 +98,20 @@ def getOutingInstances(condition = ""):
 
     logging.info(outings)
     return outings
+
+def getOutingButtonsTop(handler):
+    """
+    Renders and returns the buttons for the top of an outings page.
+
+    handler: the current page handler
+
+    returns: string
+    """
+    # Determine if the user can add an outing
+    loggedInUser = uau.getLoggedInUser(handler)
+    canAddOuting = False
+    if loggedInUser != None and uau.doesUserHavePermission(loggedInUser.accountLevel, uau.poster):
+        canAddOuting = True
+
+    # Get the rendered buttons
+    return jtr.getRenderedTemplate(pathToOutingTemplates, buttonsTopTemplateName, { 'can_add_outing': canAddOuting })

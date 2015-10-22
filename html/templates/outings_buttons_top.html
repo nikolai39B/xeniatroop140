@@ -1,0 +1,12 @@
+<!--
+Requires:
+    can_add_outing (bool)
+-->
+<div class="d_buttons_page_content_top">
+    <a class="button a_button_page_content" href="/outings">All Outings</a>
+    <a class="button a_button_page_content" href="/outings/showcase">Showcase Outings</a>
+    <a class="button a_button_page_content" href="/outings/upcoming">Upcoming Outings</a>
+    {% if can_add_outing %}
+        <a class="button a_button_page_content" href="/outings/add">Add an Outing</a>
+    {% endif %}
+</div>
