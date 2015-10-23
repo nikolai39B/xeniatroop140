@@ -1,6 +1,4 @@
-/// <reference path="dynamicResizing.js" />
-/// <reference path="eventUtilities.js" />
-/// <reference path="formObjectsUtilities.js" />
+/// <reference path="commonUtilities.js" />
 /// <reference path="jquery-1.11.3.js" />
 
 /* 

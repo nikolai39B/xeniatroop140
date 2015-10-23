@@ -13,6 +13,7 @@ DESCRIPTION:
 import logging
 import os
 import sys
+import urllib
 
 # GAE
 import webapp2
@@ -49,7 +50,7 @@ class Login(webapp2.RequestHandler):
 
     def post(self):
         # Get the posted values
-        username, password = hr.getTagValues(
+        username, password = hr.getQueryValues(
             self,
             [ 'i_username',
               'i_password' ])
@@ -60,7 +61,13 @@ class Login(webapp2.RequestHandler):
         # If they were correct, log in
         if success:
             uau.setCookieForUser(username, self)
-            self.redirect('/')
+
+            redirectPage = urllib.unquote('outings%5Cadd')
+            redirectQueryValue = hr.getQueryValues(self, [ 'q_redirect' ])[0].encode('ascii','ignore')
+            if redirectQueryValue != None and redirectQueryValue != "":
+                redirectPage = urllib.unquote(redirectQueryValue)
+
+            self.redirect(redirectPage)
             
         # Otherwise, let the user know that there was an error
         else:

@@ -13,7 +13,7 @@ DESCRIPTION:
 #---------#
 # Methods #
 #---------#
-def getTagValues(handler, names):
+def getQueryValues(handler, names):
     """
     Fetches the values from the elements with the given names and returns
     them in a list in the same order as names.

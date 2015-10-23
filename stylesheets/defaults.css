@@ -16,10 +16,26 @@ html {
 }
 
 input {    
-	font-family: "Trebuchet MS", Helvetica, sans-serif;
-}
-
-textarea {
+    border: 1px solid #A9A9A9;
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size: 1em;
+    padding: 2px;
+}
+
+input:-webkit-autofill {
+    /* Makes autofill behave */
+    -webkit-box-shadow: 0 0 0 50px #c0c0e0 inset;
+}
+
+input:-webkit-autofill:focus {
+    /* Makes autofill behave */
+    -webkit-box-shadow: 0 0 0 50px #c0c0e0 inset;
+} 
+
+textarea {
+    border: 1px solid #A9A9A9;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 1em;
+    min-height: 57px; /* 3 lines */
+    padding: 2px;
 }

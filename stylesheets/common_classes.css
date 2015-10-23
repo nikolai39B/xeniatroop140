@@ -127,6 +127,14 @@ div.d_form_textbox_line {
     margin: 0 0 4px 0;
 }
 
+div.d_hidden_data {
+    height: auto; 
+    position: absolute; 
+    white-space: nowrap;
+    width: auto;
+    visibility: hidden;
+}
+
 div.d_page_content {
     margin: 4px 4px 25px 184px/* div.d_buttons.width + div.d_buttons.padding.left + div.d_buttons.padding.right + 4 */;
 }
@@ -180,6 +188,6 @@ label.lbl_form_textbox {
 /* textarea */
 textarea.ta_form_textarea {
     height: 100px;
-    resize: vertical;
+    resize: none;
     width: 72%;
 }

@@ -74,12 +74,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "documentation", "documentat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{3F556F28-5011-42B2-8B07-11DF92DC8B70}"
 	ProjectSection(SolutionItems) = preProject
-		scripts\dynamicResizing.js = scripts\dynamicResizing.js
-		scripts\eventUtilities.js = scripts\eventUtilities.js
+		scripts\commonUtilities.js = scripts\commonUtilities.js
 		scripts\jquery-1.11.3.js = scripts\jquery-1.11.3.js
-		scripts\jquery-1.11.3.min.js = scripts\jquery-1.11.3.min.js
 		scripts\jsXmlComment.txt = scripts\jsXmlComment.txt
-		scripts\login.js = scripts\login.js
 		scripts\outings_add.js = scripts\outings_add.js
 		scripts\referencePaths.js = scripts\referencePaths.js
 	EndProjectSection
@@ -123,14 +120,14 @@ Global
 		{F21A977B-5AED-44D2-A989-AFEB10F0CDF9} = {3933B56C-A24A-4EC0-8FDD-3FC80F26BFDF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		UDUDRY = False
-		UDUVERBOSE = False
-		UDUFORCE = False
-		UDUDETACHED = False
-		UDUCUSTOM = False
-		UDUCUSTOMLIST = 
-		UDUCUSTOMBUILD = 
-		UDUFILESCOPE = 
 		UDUSCENARIO = DEFAULT
+		UDUFILESCOPE = 
+		UDUCUSTOMBUILD = 
+		UDUCUSTOMLIST = 
+		UDUCUSTOM = False
+		UDUDETACHED = False
+		UDUFORCE = False
+		UDUVERBOSE = False
+		UDUDRY = False
 	EndGlobalSection
 EndGlobal
