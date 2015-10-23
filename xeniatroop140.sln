@@ -77,9 +77,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{3F55
 		scripts\dynamicResizing.js = scripts\dynamicResizing.js
 		scripts\eventUtilities.js = scripts\eventUtilities.js
 		scripts\jquery-1.11.3.js = scripts\jquery-1.11.3.js
+		scripts\jquery-1.11.3.min.js = scripts\jquery-1.11.3.min.js
 		scripts\jsXmlComment.txt = scripts\jsXmlComment.txt
 		scripts\login.js = scripts\login.js
-		scripts\outings.js = scripts\outings.js
+		scripts\outings_add.js = scripts\outings_add.js
 		scripts\referencePaths.js = scripts\referencePaths.js
 	EndProjectSection
 EndProject
@@ -122,14 +123,14 @@ Global
 		{F21A977B-5AED-44D2-A989-AFEB10F0CDF9} = {3933B56C-A24A-4EC0-8FDD-3FC80F26BFDF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		UDUSCENARIO = DEFAULT
-		UDUFILESCOPE = 
-		UDUCUSTOMBUILD = 
-		UDUCUSTOMLIST = 
-		UDUCUSTOM = False
-		UDUDETACHED = False
-		UDUFORCE = False
-		UDUVERBOSE = False
 		UDUDRY = False
+		UDUVERBOSE = False
+		UDUFORCE = False
+		UDUDETACHED = False
+		UDUCUSTOM = False
+		UDUCUSTOMLIST = 
+		UDUCUSTOMBUILD = 
+		UDUFILESCOPE = 
+		UDUSCENARIO = DEFAULT
 	EndGlobalSection
 EndGlobal

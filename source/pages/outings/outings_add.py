@@ -30,28 +30,11 @@ contentFilename = 'outings_add.html'
 pageTemplateValues = { 
     'content_title': 'Add an Outing',
     'page_title': 'Troop 140',
+    'scripts': [ 'scripts/outings_add.js' ]
 }
 
 class Outings_Add(webapp2.RequestHandler):
     def get(self):
-
-        # FOR DEBUGGING
-        # Add some events
-        """
-        newOuting = ou.createOuting(
-            outingName = 'Test',
-            departureTime = datetime.datetime.now() - datetime.timedelta(days=3),
-            returnTime = datetime.datetime.now(),
-            meetLocation = 'Here',
-            outingLocation = 'There',
-            description = 'This is a test outing.',
-            showcase = True)
-        newOuting.put()
-
-        time.sleep(1)
-        """
-        # END
-
         # Determine if the user can add an outing
 
         contentTemplateValues = {
@@ -60,4 +43,7 @@ class Outings_Add(webapp2.RequestHandler):
 
         # Render the page
         jtr.renderContentAndPage(self, pathToContent, contentFilename, contentTemplateValues, pageTemplateValues)
+
+    def post(self):
+        pass
 

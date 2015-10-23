@@ -18,3 +18,8 @@ html {
 input {    
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
+
+textarea {
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 1em;
+}

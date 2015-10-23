@@ -162,9 +162,24 @@ input.i_button {
 }
 
 /* label */
-label.lbl_form_textbox_label {
+label.lbl_form {
     display: inline-block;
     padding: 0 4px 0 0;
     text-align: right;
+}
+
+label.lbl_form_textarea {
+    min-width: 22%;
+    vertical-align: top;
+}
+
+label.lbl_form_textbox {
     width: 43%;
+}
+
+/* textarea */
+textarea.ta_form_textarea {
+    height: 100px;
+    resize: vertical;
+    width: 72%;
 }

@@ -30,32 +30,11 @@ contentFilename = 'outings.html'
 pageTemplateValues = { 
     'content_title': 'All Outings',
     'page_title': 'Troop 140',
-    #'scripts': [ 'scripts/outings.js' ],
     'stylesheets': [ 'stylesheets/outings/outings.css' ]
 }
 
 class Outings(webapp2.RequestHandler):
     def get(self):
-
-        # FOR DEBUGGING
-        # Add some events
-        """
-        newOuting = ou.createOuting(
-            outingName = 'Test',
-            departureTime = datetime.datetime.now() - datetime.timedelta(days=3),
-            returnTime = datetime.datetime.now(),
-            meetLocation = 'Here',
-            outingLocation = 'There',
-            description = 'This is a test outing.',
-            showcase = True)
-        newOuting.put()
-
-        time.sleep(1)
-        """
-        # END
-
-        
-
         contentTemplateValues = {
             'buttons_top': ou.getOutingButtonsTop(self),
             'outings': ou.getRenderedOutings(ou.getOutingInstances())
