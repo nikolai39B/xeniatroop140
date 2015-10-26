@@ -15,7 +15,7 @@ from google.appengine.ext import db
 class Outing(db.Model):
     # Basic info
     outingName = db.StringProperty(required = True)
-    description = db.StringProperty()
+    description = db.StringProperty(required = True)
 
     # Timing
     departureTime = db.DateTimeProperty(required = True)
@@ -26,7 +26,8 @@ class Outing(db.Model):
     outingLocation = db.StringProperty(required = True)
 
     # Showcase
-    showcase = db.BooleanProperty()
+    showcase = db.BooleanProperty(required = True)
     
     # Created
+    creatorId = db.StringProperty()
     created = db.DateTimeProperty(auto_now_add = True)

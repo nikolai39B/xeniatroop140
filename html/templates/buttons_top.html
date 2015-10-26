@@ -29,6 +29,7 @@ Optional:
                 {% if login_redirect_link is defined %}
                     {% set login_link = login_link + '?q_redirect=' + login_redirect_link %}
                 {% endif %}
+
                 <a class="button a_button_top" href="{{ login_link }}">Login</a>
             {% endif %}
         </div>

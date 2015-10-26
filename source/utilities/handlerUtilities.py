@@ -6,9 +6,17 @@ DIRECTORY:
     xeniatroop140/source/utilities
 
 DESCRIPTION:
-    This file contains an assortment of utility methods for
-    page handlers to use
+    This file contains an assortment of utility methods for page handlers to use.
 """
+# Python
+import datetime
+
+# Application
+import source.utilities.userAccountUtilities as uau
+
+#------#
+# Data #
+#------#
 
 #---------#
 # Methods #
@@ -40,3 +48,25 @@ def getQueryValues(handler, names):
         values.append(getQueryValue(handler, name))
 
     return values
+
+def userIsAuthorized(handler, requiredAccountLevel):
+    """    
+    Determines whether the current user's account level meets the required account level.
+    If the user does not, sets the redirect flags to the unauthroized page. Usually, if this
+    method returns false the caller will want to immediately return.
+
+    handler: the current page handler
+    requiredAccountLevel: the required level
+
+    returns: bool
+    """
+    currentUser = uau.getLoggedInUser(handler)
+    userAccountLevel = uau.loggedOut    
+    if currentUser != None:
+        userAccountLevel = currentUser.accountLevel
+
+    if not uau.doesUserHavePermission(userAccountLevel, requiredAccountLevel):
+        handler.redirect('/unauthorized')
+        return False
+
+    return True

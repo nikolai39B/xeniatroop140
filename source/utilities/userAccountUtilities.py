@@ -101,11 +101,27 @@ def createUserAccount(firstName, lastName, username, password, accountLevel):
         passwordHashAndSalt = enUtil.makeHashAndSaltString(password),
         accountLevel = accountLevel)
 
-def userAccountParametersAreValid(firstName, lastName, username, password, verify, accountLevel):
+def userAccountParametersAreValid(firstName, lastName, username, password, accountLevel):
     """
-    Checks the given parameters to make sure they are valid. Returns a tuple containing
-    whether they were all correct and the error message. Providing None for a parameter
-    will skip checking that parameter.
+    Checks the given parameters to make sure they are valid. Returns two values:
+    whether they were all correct and the error message.
+
+    firstName: the first name to check
+    lastName: the last name to check
+    username: the username to check
+    password: the password to check
+    accountLevel: the account level to check
+
+    returns: bool, string
+    """
+    # TODO: implement
+    return True, ""
+
+def userAccountParametersAreValidForCreate(firstName, lastName, username, password, verify, accountLevel):
+    """
+    Checks the given parameters to make sure they are valid. Returns a two values:
+    whether they were all correct and the error message. Also takes a verify parameter that
+    should be the same as the password parameter.
 
     firstName: the first name to check
     lastName: the last name to check
@@ -114,10 +130,15 @@ def userAccountParametersAreValid(firstName, lastName, username, password, verif
     verify: the duplicated password to check
     accountLevel: the account level to check
 
-    returns: (bool, string)
+    returns: bool, string
     """
-    # TODO: implement
-    return (True, "")
+    allValid, errorMessage = userAccountParametersAreValid(firstName, lastName, username, password, accountLevel)
+
+    if password != verify:
+        errorMessage = 'Password and verify password much match.<br />'
+        allValid = False
+
+    return allValid, errorMessage
 
 def getUserWithUsername(username):
     """

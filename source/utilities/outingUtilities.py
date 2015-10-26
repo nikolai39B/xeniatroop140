@@ -33,30 +33,6 @@ buttonsTopTemplateName = 'outings_buttons_top.html'
 #---------#
 # Methods #
 #---------#
-def createOuting(outingName, departureTime, returnTime, meetLocation, outingLocation, description = '', showcase = False):
-    """
-    Creates a new outing with given parameters. Does not check any parameters to 
-    ensure they are valid.
-
-    outingName: the name of the outing
-    departureTime: the time to leave the meet location
-    returnTime: the time everyone should be back
-    meetLocation: the location everyone should initially meet
-    outingLocation: the location of the outing
-    description: a description of the outing
-    showcase: whether to showcase this event
-
-    returns: Outing
-    """
-    return outing.Outing(
-        outingName = outingName,
-        description = description,
-        departureTime = departureTime,
-        returnTime = returnTime,
-        meetLocation = meetLocation,
-        outingLocation = outingLocation,
-        showcase = showcase)
-
 def getRenderedOuting(outing):
     """
     Renders and returns an outing in html.
@@ -115,3 +91,88 @@ def getOutingButtonsTop(handler):
 
     # Get the rendered buttons
     return jtr.getRenderedTemplate(pathToOutingTemplates, buttonsTopTemplateName, { 'can_add_outing': canAddOuting })
+
+def createOuting(outingName, description, departureTime, returnTime, meetLocation, outingLocation, showcase, creatorId):
+    """
+    Creates a new outing with the given parameters.
+
+    outingName: the name of the outing
+    description: description for the outing
+    departureTime: the time to depart from the outing
+    returnTime: the time to return from the outing
+    meetLocation: the location to meet to depart for the outing
+    outingLocation: the location of the outing
+    showcase: whether to showcase this outing
+    creatorId: the datastore key for the outing creator
+
+    returns: Outing
+    """
+    return outing.Outing(
+        outingName = outingName,
+        description = description if description != None else '',
+        departureTime = departureTime,
+        returnTime = returnTime,
+        meetLocation = meetLocation,
+        outingLocation = outingLocation,
+        showcase = showcase if showcase != None else False,
+        creatorId = creatorId)
+
+def outingParametersAreValid(outingName, description, departureTime, returnTime, meetLocation, outingLocation, showcase):
+    """
+    Checks the given parameters to make sure they are valid. Returns a two values:
+    whether they were all correct and the error message.
+
+    outingName: the name of the outing
+    description: description for the outing
+    departureTime: the time to depart from the outing
+    returnTime: the time to return from the outing
+    meetLocation: the location to meet to depart for the outing
+    outingLocation: the location of the outing
+    showcase: whether to showcase this outing
+
+    returns: bool, string
+    """
+    allCorrect = True
+    errorMessage = ''
+
+    # Check outing name
+    if outingName == None or outingName == '':
+        errorMessage += 'Outing name cannot be blank.<br />'
+        allCorrect = False
+
+    # Check description
+    if description == None:
+        # Always valid
+        pass
+
+    # Check departure time
+    if departureTime == None:
+        errorMessage += 'Outing must have a departure time.<br />'
+        allCorrect = False
+        
+    # Check return time
+    if returnTime == None:
+        errorMessage += 'Outing must have a return time.<br />'
+        allCorrect = False
+
+    # Check departure time before return time
+    if departureTime != None and returnTime != None and departureTime > returnTime:
+        errorMessage += 'Departure time must be before return time.<br />'
+        allCorrect = False
+
+    # Check meet location
+    if meetLocation == None or meetLocation == '':
+        errorMessage += 'Meet location cannot be blank.<br />'
+        allCorrect = False
+
+    # Check outing location
+    if outingLocation == None or outingLocation == '':
+        errorMessage += 'Outing location cannot be blank.<br />'
+        allCorrect = False
+
+    if showcase == None:
+        # Always valid
+        pass
+
+    # TODO: implement
+    return allCorrect, errorMessage

@@ -26,6 +26,8 @@ from source.pages.login import logout
 from source.pages.outings import outings
 from source.pages.outings import outings_add
 
+from source.pages import unauthorized
+
 from source.pages import notFound
 
 #------#
@@ -33,10 +35,13 @@ from source.pages import notFound
 #------#
 app = webapp2.WSGIApplication([ 
     ('/', home.Home),
+
     ('/login', login.Login),
     ('/logout', logout.Logout),
     ('/outings', outings.Outings),
     ('/outings/add', outings_add.Outings_Add),
+
+    ('/unauthorized', unauthorized.Unauthorized),
 
     ('/.*', notFound.NotFound)
 ], debug=True)

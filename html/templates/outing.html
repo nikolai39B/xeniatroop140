@@ -4,7 +4,7 @@ Requires:
 -->
 {% set id = outing.key().id() %}
 {% set datetime_format = '%m/%d/%y at %I:%M %p' %}
-<a class="button a_button_block" href="/outings/outing/{{ id }}" id="{{ id }}_container">
+<a class="button a_button_block" href="/outings/outing/{{ id }}">
     <!-- Name -->
     <div class="header4">{{ outing.outingName }}</div>
 
@@ -13,12 +13,12 @@ Requires:
     -->
 
     <!-- Timing -->
-    <div class="d_outing_row_half" id="{{ id }}_row_half_0">Depart: {{ outing.departureTime.strftime(datetime_format) }}</div><div
-         class="d_outing_row_half" id="{{ id }}_row_half_1">Return: {{ outing.returnTime.strftime(datetime_format) }}</div><br />
+    <div class="d_outing_row_half">Depart: {{ outing.departureTime.strftime(datetime_format) }}</div><div
+         class="d_outing_row_half">Return: {{ outing.returnTime.strftime(datetime_format) }}</div><br />
 
     <!-- Location -->
-    <div class="d_outing_row_half" id="{{ id }}_row_half_2">Meet: {{ outing.meetLocation }}</div><div 
-         class="d_outing_row_half" id="{{ id }}_row_half_3">Outing: {{ outing.outingLocation }}</div>
+    <div class="d_outing_row_half">Meet: {{ outing.meetLocation }}</div><div 
+         class="d_outing_row_half">Outing: {{ outing.outingLocation }}</div>
 
     <!-- Description -->
     <div>
@@ -27,12 +27,4 @@ Requires:
     </div>
 
     <!-- Photos (TODO) -->
-
-    <!-- Auto-center -->
-    <!--
-        I accomplished this same thing using css, so this call isn't necessary.    
-        <script>
-            addResizeWidthsEventsForOutingRows({{ id }});
-        </script>
-    -->
 </a>

@@ -76,14 +76,10 @@ def getRenderedPage(handler, templateValues):
         'logged_in': False
     }
 
-    logging.info(templateValues)
-    logging.info('login_redirect_link' in templateValues.keys())
-
     if 'login_redirect_link' in templateValues.keys():
         # Get the login redirect link if possible
         tempVals['login_redirect_link'] = templateValues['login_redirect_link']
         
-    logging.info(tempVals)
     if currentUser != None:
         # Get the user information if possible
         tempVals['user'] = '%s %s' % (currentUser.firstName, currentUser.lastName)

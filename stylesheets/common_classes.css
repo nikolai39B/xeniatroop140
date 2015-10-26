@@ -169,6 +169,21 @@ input.i_button {
     text-align: center;   
 }
 
+input.i_checkbox {
+    /* Note: checkboxes must always be followed by an i_checkbox_centerer to 
+       make the label behave properly. */
+    display: inline-block;
+    height: 25px;
+    margin: 0px;
+    width: 25px;
+    vertical-align: bottom;
+}
+
+input.i_checkbox_centerer {
+    width: 1px;
+    visibility: hidden;
+}
+
 /* label */
 label.lbl_form {
     display: inline-block;
@@ -184,6 +199,8 @@ label.lbl_form_textarea {
 label.lbl_form_textbox {
     width: 43%;
 }
+
+/* span */
 
 /* textarea */
 textarea.ta_form_textarea {

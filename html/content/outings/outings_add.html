@@ -4,18 +4,28 @@ Requires:
 
 Optional:
     departure_time (string)
+    description (string)
     error_message (string)
     meet_location (string)
     outing_location (string)
     outing_name (string)
     return_time (string)
+    showcase (bool)
 
+Names:
+    i_departure_time
+    i_meet_location
+    i_outing_location
+    i_outing_name
+    i_return_time
+    i_showcase
+    ta_description
 -->
-{{ outing_buttons_top | safe }}
+{{ outings_buttons_top | safe }}
 <form class="f_page_content" method="post">
     <!-- Name -->
     <div class="d_form_textbox_line">
-        <label class="lbl_form lbl_form_textbox">Username:</label>
+        <label class="lbl_form lbl_form_textbox">Outing Name:</label>
         <input name="i_outing_name" type="text" value="{{ outing_name }}" />
     </div>
 
@@ -42,16 +52,26 @@ Optional:
         <label class="lbl_form lbl_form_textbox">Outing Location:</label>
         <input name="i_outing_location" type="text" value="{{ outing_location }}" />
     </div>
+    
+    <!-- Showcase -->
+    <div class="d_form_textbox_line">
+        <label class="lbl_form lbl_form_textbox">Showcase:</label>
+        <input class="i_checkbox" name="i_showcase" type="checkbox" value="True"
+            {% if showcase == True %}
+                checked
+            {% endif %} />
+        <input class="i_checkbox_centerer" type="text" />
+    </div>
 
     <!-- Description -->
     <div class="d_form_textbox_line">
         <label class="lbl_form lbl_form_textarea">Description:</label>
-        <textarea class="ta_form_textarea" name="ta_description"></textarea>
+        <textarea class="ta_form_textarea" name="ta_description">{{ description }}</textarea>
     </div>
 
     {% if error_message is defined and error_message != "" %}
         <!-- Error Message -->
-        <div class="d_error">{{ error_message }}</div>
+        <div class="d_error">{{ error_message | safe }}</div>
     {% endif %}
 
     <!-- Add Button -->

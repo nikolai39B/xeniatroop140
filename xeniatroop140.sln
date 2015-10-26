@@ -23,10 +23,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "pages", "pages", "{A4489BED
 	ProjectSection(SolutionItems) = preProject
 		source\pages\home.py = source\pages\home.py
 		source\pages\notFound.py = source\pages\notFound.py
+		source\pages\unauthorized.py = source\pages\unauthorized.py
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utilities", "utilities", "{3E751CEB-3328-481B-87F6-1FF42D12B8A6}"
 	ProjectSection(SolutionItems) = preProject
+		source\utilities\datetimeUtilities.py = source\utilities\datetimeUtilities.py
 		source\utilities\encryptionUtilities.py = source\utilities\encryptionUtilities.py
 		source\utilities\handlerUtilities.py = source\utilities\handlerUtilities.py
 		source\utilities\hashSecret.py = source\utilities\hashSecret.py
@@ -48,6 +50,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{3933
 	ProjectSection(SolutionItems) = preProject
 		html\content\home.html = html\content\home.html
 		html\content\notFound.html = html\content\notFound.html
+		html\content\unauthorized.html = html\content\unauthorized.html
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "database_models", "database_models", "{CD4B3972-7624-4B62-9084-CACD6936052D}"
@@ -120,14 +123,14 @@ Global
 		{F21A977B-5AED-44D2-A989-AFEB10F0CDF9} = {3933B56C-A24A-4EC0-8FDD-3FC80F26BFDF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		UDUSCENARIO = DEFAULT
-		UDUFILESCOPE = 
-		UDUCUSTOMBUILD = 
-		UDUCUSTOMLIST = 
-		UDUCUSTOM = False
-		UDUDETACHED = False
-		UDUFORCE = False
-		UDUVERBOSE = False
 		UDUDRY = False
+		UDUVERBOSE = False
+		UDUFORCE = False
+		UDUDETACHED = False
+		UDUCUSTOM = False
+		UDUCUSTOMLIST = 
+		UDUCUSTOMBUILD = 
+		UDUFILESCOPE = 
+		UDUSCENARIO = DEFAULT
 	EndGlobalSection
 EndGlobal
