@@ -30,13 +30,14 @@ contentFilename = 'outings.html'
 pageTemplateValues = { 
     'content_title': 'All Outings',
     'page_title': 'Troop 140',
+    'login_redirect_link': '/outings',
     'stylesheets': [ 'stylesheets/outings/outings.css' ]
 }
 
 class Outings(webapp2.RequestHandler):
     def get(self):
         contentTemplateValues = {
-            'buttons_top': ou.getOutingButtonsTop(self),
+            'outing_buttons_top': ou.getOutingButtonsTop(self),
             'outings': ou.getRenderedOutings(ou.getOutingInstances())
         }
 

@@ -20,7 +20,7 @@ import webapp2
 
 # Application
 import requestHandler as rh
-import source.utilities.handlerUtilities as hr
+import source.utilities.handlerUtilities as hu
 import source.utilities.jinjaTemplateRenderer as jtr
 import source.utilities.userAccountUtilities as uau
 	
@@ -30,7 +30,6 @@ contentFilename = 'login.html'
 pageTemplateValues = { 
     'content_title': 'Login',
     'page_title': 'Troop 140',
-    #'scripts': [ 'scripts/login.js' ]
 }
 
 class Login(webapp2.RequestHandler):
@@ -50,7 +49,7 @@ class Login(webapp2.RequestHandler):
 
     def post(self):
         # Get the posted values
-        username, password = hr.getQueryValues(
+        username, password = hu.getQueryValues(
             self,
             [ 'i_username',
               'i_password' ])
@@ -62,8 +61,9 @@ class Login(webapp2.RequestHandler):
         if success:
             uau.setCookieForUser(username, self)
 
-            redirectPage = urllib.unquote('outings%5Cadd')
-            redirectQueryValue = hr.getQueryValues(self, [ 'q_redirect' ])[0].encode('ascii','ignore')
+            # Get the redirect page if possible
+            redirectPage = '/'#urllib.unquote('outings%5Cadd')
+            redirectQueryValue = hu.getQueryValue(self, 'q_redirect')#.encode('ascii','ignore')
             if redirectQueryValue != None and redirectQueryValue != "":
                 redirectPage = urllib.unquote(redirectQueryValue)
 

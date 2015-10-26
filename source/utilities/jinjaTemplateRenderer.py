@@ -32,7 +32,7 @@ def renderContentAndPage(handler, pathToContent, contentFilename, contentTemplat
     page using the handler. The contentTemplateValues dictionary contains the template values for the
     page's content, and the pageTemplateValues dictionary contains the additional template values for
     page_base.html. The pageTemplateValues dictionary should contain 'page_title', 'content_title', and
-    optionally 'scripts and 'stylesheets'.
+    optionally 'login_redirect_link', 'scripts' and 'stylesheets'.
 
     handler: the current page handler
     pathToContent: the path to the content template
@@ -56,8 +56,8 @@ def getRenderedPage(handler, templateValues):
     """
     Renders and returns page_base.html after inserting the template values. The templateValues
     dictionary should contain 'page_title', 'content_title', 'content', optionally
-    'scripts' and 'stylesheets', and no other values. Any additional templating to be done to 'content'
-    should be done before calling this method.
+    'login_redirect_link', 'scripts' and 'stylesheets', and no other values. Any additional templating
+    to be done to 'content' should be done before calling this method.
 
     handler: the current page handler
     templateValues: a dictionary of values for the template
@@ -71,15 +71,25 @@ def getRenderedPage(handler, templateValues):
     currentUser = uau.getLoggedInUser(handler)
 
     # Render the buttons_top
-    tv = {
+    tempVals = {
         'user': 'Guest',
         'logged_in': False
     }
+
+    logging.info(templateValues)
+    logging.info('login_redirect_link' in templateValues.keys())
+
+    if 'login_redirect_link' in templateValues.keys():
+        # Get the login redirect link if possible
+        tempVals['login_redirect_link'] = templateValues['login_redirect_link']
+        
+    logging.info(tempVals)
     if currentUser != None:
-        tv['user'] = '%s %s' % (currentUser.firstName, currentUser.lastName)
-        tv['logged_in'] = True
+        # Get the user information if possible
+        tempVals['user'] = '%s %s' % (currentUser.firstName, currentUser.lastName)
+        tempVals['logged_in'] = True
     
-    templateValues['buttons_top'] = getRenderedTemplateWithEnvironment(jinjaEnv, 'buttons_top.html', tv)
+    templateValues['buttons_top'] = getRenderedTemplateWithEnvironment(jinjaEnv, 'buttons_top.html', tempVals)
         
     # Render the buttons_side
     templateValues['buttons_side'] = getRenderedTemplateWithEnvironment(jinjaEnv, 'buttons_side.html')
