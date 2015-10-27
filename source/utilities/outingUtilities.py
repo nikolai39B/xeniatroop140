@@ -19,16 +19,17 @@ import time
 from google.appengine.ext import db
 
 # Application
-import source.database_models.outing as outing
+import source.database_models.outing as out
 import source.utilities.jinjaTemplateRenderer as jtr
 import source.utilities.userAccountUtilities as uau
 
 #------#
 # Data #
 #------#
-pathToOutingTemplates = 'html/templates'
+pathToOutingTemplates = 'html/templates/outings'
 outingTemplateName = 'outing.html'
 buttonsTopTemplateName = 'outings_buttons_top.html'
+outingsContainerTemplateName = 'outings_container.html'
 
 #---------#
 # Methods #
@@ -51,11 +52,57 @@ def getRenderedOutings(outings):
 
     returns: string
     """
-    outingsHtml = ""
+    outingsHtml = ''
     for outing in outings:
         outingsHtml += getRenderedOuting(outing)
 
     return outingsHtml
+
+def getRenderedOutingsContainer(outings, showShowcase = True, showUpcoming = True, showPast = True):
+    """
+    Renders and returns the outings container with the given outings.
+
+    outings: the list of outings whose html to generate
+    showShowcase: whether to show the showcase outings
+    showUpcoming: whether to show the upcoming outings
+    showPast: whether to show the past outings
+
+    returns: string
+    """
+    # Showcase Outings
+    showcaseOutings = []
+    for outing in outings:
+        if outing.showcase:
+            showcaseOutings.append(outing)
+
+    showcaseOutings.sort(key=lambda o: o.departureTime, reverse=True)
+    showcaseHtml = getRenderedOutings(showcaseOutings)
+
+    # Upcoming and Past Outings
+    upcomingOutings = []
+    pastOutings = []
+    for outing in outings:
+        if outing.departureTime > datetime.datetime.now():
+            upcomingOutings.append(outing)
+        else:
+            pastOutings.append(outing)
+
+    upcomingOutings.sort(key=lambda o: o.departureTime)
+    pastOutings.sort(key=lambda o: o.departureTime, reverse=True)
+    upcomingHtml = getRenderedOutings(upcomingOutings)
+    pastHtml = getRenderedOutings(pastOutings)
+
+    # Render the container
+    templateValues = {
+        'show_past': showPast,
+        'show_showcase': showShowcase,
+        'show_upcoming': showUpcoming,
+        'past_outings': pastHtml,
+        'showcase_outings': showcaseHtml,
+        'upcoming_outings': upcomingHtml
+    }
+
+    return jtr.getRenderedTemplate(pathToOutingTemplates, outingsContainerTemplateName, templateValues)
 
 def getOutingInstances(condition = ""):
     """
@@ -107,7 +154,7 @@ def createOuting(outingName, description, departureTime, returnTime, meetLocatio
 
     returns: Outing
     """
-    return outing.Outing(
+    return out.Outing(
         outingName = outingName,
         description = description if description != None else '',
         departureTime = departureTime,
@@ -133,11 +180,11 @@ def outingParametersAreValid(outingName, description, departureTime, returnTime,
     returns: bool, string
     """
     allCorrect = True
-    errorMessage = ''
+    errorMessage = []
 
     # Check outing name
     if outingName == None or outingName == '':
-        errorMessage += 'Outing name cannot be blank.<br />'
+        errorMessage.append('Outing name cannot be blank.')
         allCorrect = False
 
     # Check description
@@ -147,27 +194,27 @@ def outingParametersAreValid(outingName, description, departureTime, returnTime,
 
     # Check departure time
     if departureTime == None:
-        errorMessage += 'Outing must have a departure time.<br />'
+        errorMessage.append('Outing must have a departure time.')
         allCorrect = False
         
     # Check return time
     if returnTime == None:
-        errorMessage += 'Outing must have a return time.<br />'
+        errorMessage.append('Outing must have a return time.')
         allCorrect = False
 
     # Check departure time before return time
     if departureTime != None and returnTime != None and departureTime > returnTime:
-        errorMessage += 'Departure time must be before return time.<br />'
+        errorMessage.append('Departure time must be before return time.')
         allCorrect = False
 
     # Check meet location
     if meetLocation == None or meetLocation == '':
-        errorMessage += 'Meet location cannot be blank.<br />'
+        errorMessage.append('Meet location cannot be blank.')
         allCorrect = False
 
     # Check outing location
     if outingLocation == None or outingLocation == '':
-        errorMessage += 'Outing location cannot be blank.<br />'
+        errorMessage.append('Outing location cannot be blank.')
         allCorrect = False
 
     if showcase == None:

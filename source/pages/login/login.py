@@ -32,6 +32,9 @@ pageTemplateValues = {
     'page_title': 'Troop 140',
 }
 
+# Query Keys
+redirectQueryKey = 'q_redirect'
+
 class Login(webapp2.RequestHandler):
     def get(self):
 
@@ -62,8 +65,8 @@ class Login(webapp2.RequestHandler):
             uau.setCookieForUser(username, self)
 
             # Get the redirect page if possible
-            redirectPage = '/'#urllib.unquote('outings%5Cadd')
-            redirectQueryValue = hu.getQueryValue(self, 'q_redirect')#.encode('ascii','ignore')
+            redirectPage = '/'
+            redirectQueryValue = hu.getQueryValue(self, redirectQueryKey)
             if redirectQueryValue != None and redirectQueryValue != "":
                 redirectPage = urllib.unquote(redirectQueryValue)
 
@@ -72,7 +75,7 @@ class Login(webapp2.RequestHandler):
         # Otherwise, let the user know that there was an error
         else:
             contentTemplateValues = {
-                'error_message': 'Invalid username or password.',
+                'error_message': jtr.getRenderedErrorMessage('Invalid username or password.'),
                 'password': '',
                 'username': username
             }

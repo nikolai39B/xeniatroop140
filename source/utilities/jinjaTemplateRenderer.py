@@ -23,9 +23,19 @@ import jinja2
 import requestHandler as rh
 import source.utilities.userAccountUtilities as uau
 
-#----------------#
-# Page Rendering #
-#----------------#
+#------#
+# Data #
+#------#
+pathToErrorMessageTemplate = 'html/templates'
+errorMessageTemplateFilename = 'error_message.html'
+
+#---------#
+# Methods #
+#---------#
+
+    #----------------#
+    # Page Rendering #
+    #----------------#
 def renderContentAndPage(handler, pathToContent, contentFilename, contentTemplateValues, pageTemplateValues):
     """
     Renders the content and page with their respective template values, then writes the
@@ -93,9 +103,9 @@ def getRenderedPage(handler, templateValues):
     # Render page_base.html
     return getRenderedTemplateWithEnvironment(jinjaEnv, 'page_base.html', templateValues)
 
-#-------------------#
-# Generic Rendering #
-#-------------------#     
+    #-------------------#
+    # Generic Rendering #
+    #-------------------#     
 def getRenderedTemplate(pathToTemplate, templateFilename, templateValues):
     """
     Renders and returns the jinja template located at the given path with the given values.
@@ -141,3 +151,17 @@ def getJinjaEnv(pathToTemplates):
         loader=jinja2.FileSystemLoader(pathToTemplates),
         extensions=['jinja2.ext.autoescape'],
         autoescape=True)
+
+    #-----------------------------#
+    # Specific Template Rendering #
+    #-----------------------------#
+def getRenderedErrorMessage(errorMessage):
+    """
+    Gets the error message template rendered with the given message.
+
+    errorMessage: the string or list of strings to use as the error message
+
+    returns: string
+    """
+    templateValues = { 'error_message': errorMessage }
+    return getRenderedTemplate(pathToErrorMessageTemplate, errorMessageTemplateFilename, templateValues)

@@ -1,0 +1,32 @@
+<!--
+Required:
+    show_past (bool)
+    show_showcase (bool)
+    show_upcoming (bool)
+
+Optional:
+    past_outings (string)
+    showcase_outings (string)
+    upcoming_outings (string)
+-->
+{% if show_showcase %}
+    <!-- Showcase Outings -->
+    {% if show_past or show_upcoming %}
+        <div class="header3">Showcase</div>
+    {% endif %}
+    {{ showcase_outings | safe }}
+{% endif %}
+{% if show_upcoming %}
+    <!-- Upcoming Outings -->
+    {% if show_past or show_showcase %}
+        <div class="header3">Upcoming</div>
+    {% endif %}
+    {{ upcoming_outings | safe }}
+{% endif %}
+{% if show_past %}
+    <!-- Past Outings -->
+    {% if show_showcase or show_upcoming %}
+        <div class="header3">Past</div>
+    {% endif %}
+    {{ past_outings | safe }}
+{% endif %}

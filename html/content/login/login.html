@@ -19,12 +19,9 @@ Names:
     <div class="d_form_textbox_line">
         <label class="lbl_form lbl_form_textbox">Password:</label>
         <input name="i_password" type="password" value="{{ password }}" />
-    </div>
-
-    {% if error_message is defined and error_message != "" %}    
-        <!-- Error Message -->
-        <div class="d_error">{{ error_message }}</div>
-    {% endif %}
+    </div>    
+    
+    {{ error_message | safe }}
 
     <!-- Login Button -->
     <div class="d_buttons_page_content">

@@ -112,10 +112,10 @@ def userAccountParametersAreValid(firstName, lastName, username, password, accou
     password: the password to check
     accountLevel: the account level to check
 
-    returns: bool, string
+    returns: bool, list of strings
     """
     # TODO: implement
-    return True, ""
+    return True, [ "" ]
 
 def userAccountParametersAreValidForCreate(firstName, lastName, username, password, verify, accountLevel):
     """
@@ -130,12 +130,12 @@ def userAccountParametersAreValidForCreate(firstName, lastName, username, passwo
     verify: the duplicated password to check
     accountLevel: the account level to check
 
-    returns: bool, string
+    returns: bool, list of strings
     """
     allValid, errorMessage = userAccountParametersAreValid(firstName, lastName, username, password, accountLevel)
 
     if password != verify:
-        errorMessage = 'Password and verify password much match.<br />'
+        errorMessage.append('Password and verify password much match.')
         allValid = False
 
     return allValid, errorMessage

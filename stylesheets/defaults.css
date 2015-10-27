@@ -20,6 +20,11 @@ input {
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size: 1em;
     padding: 2px;
+    width: 225px;
+}
+
+input[type=submit] {
+    width: initial;/* prevents submit buttons from stretching */
 }
 
 input:-webkit-autofill {

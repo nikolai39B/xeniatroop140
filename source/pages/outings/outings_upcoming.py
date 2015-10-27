@@ -1,12 +1,12 @@
 ﻿"""
 FILE:
-    outings.py
+    outings_upcoming.py
  
 DIRECTORY:
     xeniatroop140/source/pages/outings
 
 DESCRIPTION:
-    This file manages requests to '/outings' (the outings page).
+    This file manages requests to '/outings/upcoming' (the upcoming outings page).
 """
 
 # Python
@@ -27,17 +27,17 @@ import source.utilities.jinjaTemplateRenderer as jtr
 pathToContent = os.path.join(rh.rootDir, 'html/content/outings')
 contentFilename = 'outings.html'
 pageTemplateValues = { 
-    'content_title': 'All Outings',
+    'content_title': 'Upcoming Outings',
     'page_title': 'Troop 140',
-    'login_redirect_link': '/outings',
+    'login_redirect_link': '/outings/upcoming',
     'stylesheets': [ 'stylesheets/outings/outings.css' ]
 }
 
-class Outings(webapp2.RequestHandler):
+class Outings_Upcoming(webapp2.RequestHandler):
     def get(self):
         contentTemplateValues = {
             'outing_buttons_top': ou.getOutingButtonsTop(self),
-            'outings': ou.getRenderedOutingsContainer(ou.getOutingInstances())
+            'outings': ou.getRenderedOutingsContainer(ou.getOutingInstances(), False, True, False)
         }
 
         # Render the page

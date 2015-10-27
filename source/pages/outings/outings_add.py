@@ -95,7 +95,7 @@ class Outings_Add(webapp2.RequestHandler):
                 'outing_name': outingName,
                 'description': description,
                 'departure_time': departureTime,
-                'error_message': errorMessage,
+                'error_message': jtr.getRenderedErrorMessage(errorMessage),
                 'meet_location': meetLocation,
                 'outing_location': outingLocation,
                 'return_time': returnTime,

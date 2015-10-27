@@ -1,0 +1,16 @@
+<!--
+Optional:
+    error_message (string OR list of strings)
+-->
+{% if error_message is defined and error_message != None %}
+    <!-- Error Message -->
+    <div class="d_error_container">
+        {% if error_message is string and error_message != "" %}
+            <div>{{ error_message }}</div>
+        {% elif error_message is iterable %}
+            {% for message in error_message %}
+                <div>{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endif %}

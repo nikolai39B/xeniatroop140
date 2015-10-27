@@ -69,10 +69,7 @@ Names:
         <textarea class="ta_form_textarea" name="ta_description">{{ description }}</textarea>
     </div>
 
-    {% if error_message is defined and error_message != "" %}
-        <!-- Error Message -->
-        <div class="d_error">{{ error_message | safe }}</div>
-    {% endif %}
+    {{ error_message | safe }}
 
     <!-- Add Button -->
     <div class="d_buttons_page_content">
